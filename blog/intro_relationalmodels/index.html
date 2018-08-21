@@ -11,7 +11,7 @@
     
     
     
-    <title>Intro To Database Management System</title>
+    <title>Intro To Relational Models</title>
     <meta name="generator" content="Hugo 0.47.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
@@ -75,7 +75,7 @@ if (!doNotTrack) {
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://amitrajitbose.github.io/blog/intro_dbms/">Intro To Database Management System</a></strong>
+            <strong><a href="https://amitrajitbose.github.io/blog/intro_relationalmodels/">Intro To Relational Models</a></strong>
           </h3>
         </div>
         <div class="blog-title">
@@ -92,151 +92,84 @@ if (!doNotTrack) {
             <div class="blogpost">
               
 
-<h1 id="introduction-to-dbms">Introduction To DBMS</h1>
+<h1 id="introduction-to-relational-models">Introduction To Relational Models</h1>
 
-<p><a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=Z2FyZGl2aWR5YXBpdGguYWMuaW58ZGF0YWJhc2V8Z3g6MmFhNzY1NmQ0ZjUxYjc4ZQ">Course PPT</a></p>
+<p><a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=Z2FyZGl2aWR5YXBpdGguYWMuaW58ZGF0YWJhc2V8Z3g6NjEwMTRkYTYxNDZhOGNiYw">Chapter Material</a></p>
 
-<h3 id="schema-instance">Schema &amp; Instance</h3>
+<p><strong>Relation</strong> - an <em>unordered</em> collection of attributes or fields or columns of a table.<br>
+<strong>Attributes</strong> - each column is an attribute.<br>
+<strong>Domain</strong> - set of possible values that an attribute can take.<br>
+<strong>Attribute Value</strong> - the data in a certain row and column, corresponing to a certain attribute. They are normally atomic, i.e indivisible data type.
+<em>Mathematically, relation schema is a subset of multiple domain sets, or we can say a relational schema is a collection of attributes.</em></p>
 
-<ul>
-<li>Schema - A schema is a physical or logical structure of the data-base. The basically comprise the columns along with the table.</li>
-<li>Instance - This is the actual data, when the schema is populated by real values and data entries in the form of rows.</li>
-</ul>
+<h2 id="keys">Keys</h2>
 
-<h3 id="data-model">Data Model</h3>
+<p>The set of keys <strong>K</strong>, is a non-empty subset of relational schema, thus is a subset of attributes. Thus, a key can be one or more attributes.
+The values of each key uniquely identifies each row in the table, we can thus say it is a <strong>super key</strong> of <strong>R</strong>, i.e the relational schema.
+Super key is a <strong>candidate key</strong> if set K is minimal. There can be multiple candidate keys in a relation R, then we select one as the <strong>primary key</strong>.
+<strong>Surrogate key</strong> or synthetic key is the artificially generated key that is used as a key during the absence of any primary key.
+<em>No key can be a nullable attribute.</em> We underline an attribute in the schema to show that it is a primary key.
+<strong>Simple key</strong> is a key which consists of a single attribute. Just the opposite is called <strong>Composite Key</strong>, here multiple attributes together form a key. Each attribute in a composite key are not simple keys.
+When we make a tuple of multiple <em>simple keys</em>, then we can call it as a <strong>Compound Key</strong>. It is different from composite key.
+When we take a key of some other relations to make the key of another different relation, then we call such a key as <strong>Foreign Key</strong>.</p>
 
-<ul>
-<li>It is the collection of tools that describe the data.</li>
-<li><em>Data</em> : The data itself is an integral part of the data-base.</li>
-<li><em>Data Relationships</em> : Relationship between various data and fields.</li>
-<li><em>Data Semantics</em> : Refers to the meaning of the data.</li>
-<li><em>Data Constraints</em> : Limitations and conditions on certain data values and their modifications.</li>
-</ul>
+<h2 id="relational-query-language">Relational Query Language</h2>
 
-<h3 id="data-model-types">Data Model - Types</h3>
+<p>It is a declarative programming paradigm.</p>
 
-<ul>
-<li>ER Model : It does not contain any data. It is only used for designing the data-base.</li>
-<li>Relational Model : Most widely used model for data-base, will be covered in further lessons.</li>
-<li>Object Based Data Models : Object oriented approach of representing data.</li>
-<li>Semi Structured Data Model : Used during data-base transfer, usually in XML format. For example: while transferring from Oracle DB to MySQL DB, etc.</li>
-<li>Network Model</li>
-<li>Hierarchical Model</li>
-</ul>
+<h2 id="relational-operators">Relational Operators</h2>
 
-<h3 id="ddl-dml">DDL &amp; DML</h3>
+<h3 id="select">Select</h3>
 
-<ul>
-<li>DDL : <em>Data Definition Language</em> : It is the part of the language which is used to define and manipulate the <strong>schema</strong> of the data-base.</li>
-<li>DML : <em>Data Manipulation Language</em> : It is the part of the language which is used to query and manipulate the <strong>instance</strong> of the data-base, in other word the data itself. We use SQL for this.</li>
-</ul>
+<p>This is an operation to choose a subset of rows based on certain conditions (propositional). In relational algebra it is denoted by <em>sigma</em> notation.</p>
 
-<h3 id="sql">SQL</h3>
+<h3 id="project">Project</h3>
 
-<ul>
-<li>Structured Query Language</li>
-<li>The most widely used commercial language
--It is not a Turing machine equivalent language.
--Usually embedded in some other higher-level language.
--Application programs generally access database through either <strong>language extension</strong> to allow embedded SQL or <strong>APIs like ODBC/JDBC</strong> which allow SQL queries to be sent to the databases.</li>
-</ul>
+<p>This operation chooses a set of columns from the original table. Denoted by <em>pi</em> notation. Also, each row has to be distinct. Two same row vectors cannot be simultaneously present. Also, the project command cannot take less than one attribute, because zero attribute will not be able to build a schema.</p>
 
-<h2 id="database-design">Database Design</h2>
+<h3 id="union">Union</h3>
 
-<ul>
-<li>Logical design is the first step by business mindset.</li>
-<li>Logical design from computer science mindset.</li>
-<li>Physical design of the schema/layout, the database files, their index, etc.</li>
-</ul>
+<p>This is same as the set theory union. All records that exist in both the records will be put together in a single table. Denoted by U.</p>
 
-<h2 id="design-approaches">Design Approaches</h2>
+<h3 id="set-difference">Set Difference</h3>
 
-<ul>
-<li>To minimize redundancies</li>
-<li>Reducing potential anomalies</li>
-<li>We use <strong>ER Model</strong> and/or <strong>Normalization Theory</strong>.</li>
-</ul>
+<p>This is same as normal difference of two sets. Note that, R-S is not same as S-R. Denoted by <em>minus</em> symbol.</p>
 
-<h2 id="object-relational-data-model">Object Relational Data Model</h2>
+<h3 id="set-intersection">Set Intersection</h3>
 
-<ul>
-<li>We extend the relational model by using object orientation, constructs and added data types.</li>
-<li>Attributes allowed to have complex types, nested relations, etc.</li>
-<li>Provide upward compatibility with existing relational languages.</li>
-</ul>
+<p>This is same as usual intersection of two sets. Denoted by <em>inverted U</em> symbol. This is a derived relation, not fundamental. Because, <code>R(intersect)S = R-(R-S)</code></p>
 
-<h2 id="extensible-markup-language-xml">Extensible Markup Language (XML)</h2>
+<h3 id="joining">Joining</h3>
+
+<p>Joining two relatons is same as taking cartesian product of the two sets. Denoted by x.
+<img src="https://image.slidesharecdn.com/oldch22-150422192057-conversion-gate01/95/relational-algebra-25-638.jpg?cb=1429730502" alt="Cartesian" /></p>
+
+<h3 id="renaming">Renaming</h3>
+
+<p>Denoted by <em>rho</em> symbol(<em>P</em>). It is not a fundamental operation.</p>
+
+<h3 id="composition">Composition</h3>
+
+<p>Combining multile operations and connecting them to yield some result.</p>
+
+<h3 id="natural-join">Natural Join</h3>
+
+<p>Cartesian product of two tables such that the values for common columns/attributes of the two tables are identical. It is a derived operation. Basically, cartesian(joining) minus (those rows where the common attributes have different values).
+<img src="https://image.slidesharecdn.com/oldch22-150422192057-conversion-gate01/95/relational-algebra-34-638.jpg?cb=1429730502" alt="Natural Join" /></p>
+
+<h2 id="aggregate-operations">Aggregate Operations</h2>
 
 <ul>
-<li>Originally designed as document markup, by W3C.</li>
-<li>Regularly used as the data interchange format, export, import.</li>
-<li>Lot of available tools for XML.</li>
+<li>Count</li>
+<li>Sum</li>
+<li>Average</li>
+<li>Maximum</li>
+<li>Minimum</li>
 </ul>
 
-<h2 id="database-engine">Database Engine</h2>
+<p><img src="https://image.slidesharecdn.com/oldch22-150422192057-conversion-gate01/95/relational-algebra-14-638.jpg?cb=1429730502" alt="Summary" /></p>
 
-<ul>
-<li>Storage manager</li>
-<li>Query processing</li>
-<li>Transaction manager</li>
-</ul>
-
-<h2 id="storage-manager">Storage Manager</h2>
-
-<ul>
-<li>Storage manager is the bridge between low level data stored in the database and the application programs and queries submitted to the system.</li>
-<li>Responsible for interaction with OS file manager</li>
-<li>Responsible for storing, retrieving and updating data</li>
-<li>Deals with issues like indexing, hashing, file organization, storage access</li>
-</ul>
-
-<h2 id="query-processing">Query Processing</h2>
-
-<ul>
-<li>Deals with parsing and translation to relational algebra expressions</li>
-<li>Then it optimizes the queries and expressions</li>
-<li>The evaluation is then done</li>
-</ul>
-
-<h2 id="transaction-manager">Transaction Manager</h2>
-
-<ul>
-<li>Deals issue 1: What if the database/system fails?</li>
-<li>How to recover in case of failure?</li>
-<li>Deals issue 2: What if multiple users are concurrently updating the same data?</li>
-<li>Performs a single logical function in the database application</li>
-<li>Ensures data consistency with the help of <strong>concurrency control manager</strong></li>
-</ul>
-
-<h2 id="users-admin">Users &amp; Admin</h2>
-
-<ul>
-<li>Naive users - end users</li>
-<li>Application Programmers - writes codes and queries</li>
-<li>Sophisticated users/analysts - designs query tools, migrates data, analyse data</li>
-<li>DB Administrators - priviledged access to database, special permissions apart from other permissions</li>
-</ul>
-
-<h2 id="db-system-internals">DB System Internals</h2>
-
-<ul>
-<li>Refer Diagram 1.26</li>
-</ul>
-
-<h2 id="db-architectures">DB Architectures</h2>
-
-<ul>
-<li>Centralized</li>
-<li>Client Server</li>
-<li>Parallel (Multi Processor)</li>
-<li>Distributed</li>
-</ul>
-
-<h2 id="history">History</h2>
-
-<ul>
-<li><a href="http://4840895.blogspot.com/2009/04/history-of-dbms.html">Optional</a></li>
-</ul>
+<p>Refer: <a href="https://www.slideshare.net/shashanksingh161/relational-algebra-47310566">Relational Algebra</a></p>
 
               <hr>
               <div class="related-posts">
@@ -250,7 +183,7 @@ if (!doNotTrack) {
                     </div>
                     <div class="col-sm-8 col-md-8 col-lg-8">
                       <h6 style="text-align: left">
-                        <strong><a href="/blog/intro_relationalmodels/">Intro To Relational Models</a></strong>
+                        <strong><a href="/blog/intro_dbms/">Intro To Database Management System</a></strong>
                       </h6>
                     </div>
                   </div>

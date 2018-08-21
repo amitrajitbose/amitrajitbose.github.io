@@ -21,5 +21,18 @@
 Schema &amp;amp; Instance  Schema - A schema is a physical or logical structure of the data-base. The basically comprise the columns along with the table. Instance - This is the actual data, when the schema is populated by real values and data entries in the form of rows.  Data Model  It is the collection of tools that describe the data. Data : The data itself is an integral part of the data-base.</description>
     </item>
     
+    <item>
+      <title>Intro To Relational Models</title>
+      <link>https://amitrajitbose.github.io/blog/intro_relationalmodels/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/intro_relationalmodels/</guid>
+      <description>Introduction To Relational Models Chapter Material
+Relation - an unordered collection of attributes or fields or columns of a table.
+Attributes - each column is an attribute.
+Domain - set of possible values that an attribute can take.
+Attribute Value - the data in a certain row and column, corresponing to a certain attribute. They are normally atomic, i.e indivisible data type. Mathematically, relation schema is a subset of multiple domain sets, or we can say a relational schema is a collection of attributes.</description>
+    </item>
+    
   </channel>
 </rss>
