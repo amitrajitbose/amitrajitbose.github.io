@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amitrajitbose.github.io/blog/installingubuntudualboot/</loc>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amitrajitbose.github.io/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url>
@@ -29,13 +34,13 @@
   
   <url>
     <loc>https://amitrajitbose.github.io/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amitrajitbose.github.io/blog/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -45,14 +50,20 @@
   </url>
   
   <url>
+    <loc>https://amitrajitbose.github.io/tags/customization/</loc>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://amitrajitbose.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amitrajitbose.github.io/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -81,6 +92,12 @@
   </url>
   
   <url>
+    <loc>https://amitrajitbose.github.io/tags/linux/</loc>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://amitrajitbose.github.io/tags/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
@@ -94,7 +111,7 @@
   
   <url>
     <loc>https://amitrajitbose.github.io/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -149,7 +149,7 @@ html, body {
   color: #000;
   padding: 10px;
   padding-bottom: 4px;
-  transition: all .4s ease;
+  transition: all .3s ease;
 }
 .social-links li a:hover {
   color: #99a099;
@@ -191,6 +191,7 @@ html, body {
 }
 div.footer{
   border-bottom: 5px solid #27A822;;
+  bottom: 0;
   /*border-bottom: 5px solid #99a099;;*/
 }
 /* Set the fixed height of the footer here */

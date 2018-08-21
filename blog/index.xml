@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dual Boot Ubuntu with Windows</title>
+      <link>https://amitrajitbose.github.io/blog/installingubuntudualboot/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/installingubuntudualboot/</guid>
+      <description>Tired of the black screen on Command Prompt, enough of using the mouse to guide the pointer through the screen, you now want to code directly on the Terminal or more appropriately get a bit of that geeky feeling as a computer scientist or a budding hacker, who magically writes commands on the Terminal window and transforms the world.
+Well, coming back to reality - using a Linux distribution can be one of the most liberating feeling at some times of your career.</description>
+    </item>
     
     <item>
       <title>Creating a New Theme</title>

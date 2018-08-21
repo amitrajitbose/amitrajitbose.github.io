@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Customization</title>
+      <link>https://amitrajitbose.github.io/tags/customization/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/tags/customization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Development</title>
       <link>https://amitrajitbose.github.io/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://amitrajitbose.github.io/tags/development/</guid>
       <description></description>
@@ -44,6 +53,15 @@
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://amitrajitbose.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://amitrajitbose.github.io/tags/linux/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
