@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Amitrajit Bose" />
+    <meta name="description" content="Personal Portfolio">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://amitrajitbose.github.io//img/favicon.ico">
+    
+    
+    
+    <title>Intro To Database Management System</title>
+    <meta name="generator" content="Hugo 0.47.1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-124320658-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://amitrajitbose.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="#">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://amitrajitbose.github.io/blog/intro_dbms/">Intro To Database Management System</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 21, 2018
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">dbms</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<h1 id="introduction-to-dbms">Introduction To DBMS</h1>
+
+<p><a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=Z2FyZGl2aWR5YXBpdGguYWMuaW58ZGF0YWJhc2V8Z3g6MmFhNzY1NmQ0ZjUxYjc4ZQ">Course PPT</a></p>
+
+<h3 id="schema-instance">Schema &amp; Instance</h3>
+
+<ul>
+<li>Schema - A schema is a physical or logical structure of the data-base. The basically comprise the columns along with the table.</li>
+<li>Instance - This is the actual data, when the schema is populated by real values and data entries in the form of rows.</li>
+</ul>
+
+<h3 id="data-model">Data Model</h3>
+
+<p>The collection of tools that describe the data.
+- Data : The data itself is an integral part of the data-base.
+- Data Relationships : Relationship between various data and fields.
+- Data Semantics : Refers to the meaning of the data.
+- Data Constraints : Limitations and conditions on certain data values and their modifications.</p>
+
+<h3 id="data-model-types">Data Model - Types</h3>
+
+<ul>
+<li>ER Model : It does not contain any data. It is only used for designing the data-base.</li>
+<li>Relational Model : Most widely used model for data-base, will be covered in further lessons.</li>
+<li>Object Based Data Models : Object oriented approach of representing data.</li>
+<li>Semi Structured Data Model : Used during data-base transfer, usually in XML format. For example: while transferring from Oracle DB to MySQL DB, etc.</li>
+<li>Network Model</li>
+<li>Hierarchical Model</li>
+</ul>
+
+<h3 id="ddl-dml">DDL &amp; DML</h3>
+
+<ul>
+<li>DDL : <em>Data Definition Language</em> : It is the part of the language which is used to define and manipulate the <strong>schema</strong> of the data-base.</li>
+<li>DML : <em>Data Manipulation Language</em> : It is the part of the language which is used to query and manipulate the <strong>instance</strong> of the data-base, in other word the data itself. We use SQL for this.</li>
+</ul>
+
+<h3 id="sql">SQL</h3>
+
+<ul>
+<li>Structured Query Language</li>
+<li>The most widely used commercial language
+-It is not a Turing machine equivalent language.
+-Usually embedded in some other higher-level language.
+-Application programs generally access database through either <strong>language extension</strong> to allow embedded SQL or <strong>APIs like ODBC/JDBC</strong> which allow SQL queries to be sent to the databases.</li>
+</ul>
+
+<h2 id="database-design">Database Design</h2>
+
+<ul>
+<li>Logical design is the first step by business mindset.</li>
+<li>Logical design from computer science mindset.</li>
+<li>Physical design of the schema/layout, the database files, their index, etc.</li>
+</ul>
+
+<h2 id="design-approaches">Design Approaches</h2>
+
+<ul>
+<li>To minimize redundancies</li>
+<li>Reducing potential anomalies</li>
+<li>We use <strong>ER Model</strong> and/or <strong>Normalization Theory</strong>.</li>
+</ul>
+
+<h2 id="object-relational-data-model">Object Relational Data Model</h2>
+
+<ul>
+<li>We extend the relational model by using object orientation, constructs and added data types.</li>
+<li>Attributes allowed to have complex types, nested relations, etc.</li>
+<li>Provide upward compatibility with existing relational languages.</li>
+</ul>
+
+<h2 id="extensible-markup-language-xml">Extensible Markup Language (XML)</h2>
+
+<ul>
+<li>Originally designed as document markup, by W3C.</li>
+<li>Regularly used as the data interchange format, export, import.</li>
+<li>Lot of available tools for XML.</li>
+</ul>
+
+<h2 id="database-engine">Database Engine</h2>
+
+<ul>
+<li>Storage manager</li>
+<li>Query processing</li>
+<li>Transaction manager</li>
+</ul>
+
+<h2 id="storage-manager">Storage Manager</h2>
+
+<ul>
+<li>Storage manager is the bridge between low level data stored in the database and the application programs and queries submitted to the system.</li>
+<li>Responsible for interaction with OS file manager</li>
+<li>Responsible for storing, retrieving and updating data</li>
+<li>Deals with issues like indexing, hashing, file organization, storage access</li>
+</ul>
+
+<h2 id="query-processing">Query Processing</h2>
+
+<ul>
+<li>Deals with parsing and translation to relational algebra expressions</li>
+<li>Then it optimizes the queries and expressions</li>
+<li>The evaluation is then done</li>
+</ul>
+
+<h2 id="transaction-manager">Transaction Manager</h2>
+
+<ul>
+<li>Deals issue 1: What if the database/system fails?</li>
+<li>How to recover in case of failure?</li>
+<li>Deals issue 2: What if multiple users are concurrently updating the same data?</li>
+<li>Performs a single logical function in the database application</li>
+<li>Ensures data consistency with the help of <strong>concurrency control manager</strong></li>
+</ul>
+
+<h2 id="users-admin">Users &amp; Admin</h2>
+
+<ul>
+<li>Naive users - end users</li>
+<li>Application Programmers - writes codes and queries</li>
+<li>Sophisticated users/analysts - designs query tools, migrates data, analyse data</li>
+<li>DB Administrators - priviledged access to database, special permissions apart from other permissions</li>
+</ul>
+
+<h2 id="db-system-internals">DB System Internals</h2>
+
+<ul>
+<li>Refer Diagram 1.26</li>
+</ul>
+
+<h2 id="db-architectures">DB Architectures</h2>
+
+<ul>
+<li>Centralized</li>
+<li>Client Server</li>
+<li>Parallel (Multi Processor)</li>
+<li>Distributed</li>
+</ul>
+
+<h2 id="history">History</h2>
+
+<ul>
+<li><a href="http://4840895.blogspot.com/2009/04/history-of-dbms.html">Optional</a></li>
+</ul>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">2018 &copy; All rights reserved. Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with ♥</p>
+
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://amitrajitbose.github.io/js/docs.min.js"></script>
+<script src="https://amitrajitbose.github.io/js/main.js"></script>
+
+<script src="https://amitrajitbose.github.io/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>

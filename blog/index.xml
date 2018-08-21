@@ -22,6 +22,16 @@ Well, coming back to reality - using a Linux distribution can be one of the most
     </item>
     
     <item>
+      <title>Intro To Database Management System</title>
+      <link>https://amitrajitbose.github.io/blog/intro_dbms/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/intro_dbms/</guid>
+      <description>Introduction To DBMS Course PPT
+Schema &amp;amp; Instance  Schema - A schema is a physical or logical structure of the data-base. The basically comprise the columns along with the table. Instance - This is the actual data, when the schema is populated by real values and data entries in the form of rows.  Data Model The collection of tools that describe the data. - Data : The data itself is an integral part of the data-base.</description>
+    </item>
+    
+    <item>
       <title>Creating a New Theme</title>
       <link>https://amitrajitbose.github.io/blog/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
