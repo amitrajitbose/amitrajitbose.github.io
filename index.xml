@@ -6,10 +6,20 @@
     <description>Recent content on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 21 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Numpy 101</title>
+      <link>https://amitrajitbose.github.io/blog/numpy101/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/numpy101/</guid>
+      <description>Introduction Numpy is a python library that provides functions that are especially useful when you have to work with large arrays and matrices of numeric data, like doing matrix matrix multiplications. Also, Numpy is battle tested and optimized so that it runs fast, much faster than if you were working with Python lists directly.
+The array object class is the foundation of Numpy, and Numpy arrays are like lists in Python, except that every thing inside an array must be of the same type, like int or float.</description>
+    </item>
     
     <item>
       <title>Dual Boot Ubuntu with Windows</title>
