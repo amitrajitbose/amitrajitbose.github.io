@@ -119,21 +119,20 @@ if (!doNotTrack) {
 <li>Update Value <code>UPDATE celebs SET age = 22 WHERE id = 1;</code></li>
 <li>Alter Table <code>ALTER TABLE celebs ADD COLUMN twitter_handle TEXT;</code></li>
 <li>Delete Rows <code>DELETE FROM celebs WHERE twitter_handle IS NULL;</code></li>
-
-<li><p>Add Constraint <code>CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &quot;Grammy&quot; );</code><br></p>
+<li>Add Constraint <code>CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &quot;Grammy&quot; );</code><br></li>
+</ul>
 
 <pre><code>CREATE TABLE celebs ( 
-id INTEGER PRIMARY KEY,
-name TEXT UNIQUE,
-date_of_birth TEXT NOT NULL,
-date_of_death TEXT DEFAULT 'Not Applicable'
-);
+  id INTEGER PRIMARY KEY,
+  name TEXT UNIQUE,
+  date_of_birth TEXT NOT NULL,
+  date_of_death TEXT DEFAULT 'Not Applicable'
+  );
 </code></pre>
 
 <h3 id="more-on-constraints">More on constraints:</h3>
 
-<p>Constraints that add information about how a column can be used are invoked after specifying the data type for a column. They can be used to tell the database to reject inserted data that does not adhere to a certain restriction.</p></li>
-</ul>
+<p>Constraints that add information about how a column can be used are invoked after specifying the data type for a column. They can be used to tell the database to reject inserted data that does not adhere to a certain restriction.</p>
 
 <p>1.<strong>PRIMARY KEY</strong> columns can be used to uniquely identify the row. Attempts to insert a row with an identical value to a row already in the table will result in a constraint violation which will not allow you to insert the new row.</p>
 
@@ -164,17 +163,17 @@ date_of_death TEXT DEFAULT 'Not Applicable'
 <li>ORDER BY (ascending ASC) <code>SELECT name FROM movies ORDER BY imdb_rating;</code></li>
 <li>ORDER BY (descending DESC) <code>SELECT name FROM movies ORDER BY imdb_rating DESC;</code></li>
 <li>Limit the prompt from showing all rows <code>SELECT * FROM movies ORDER BY imdb_rating DESC LIMIT 3;</code></li>
-<li>Conditional Logic If-Then <br>
-<code>
-SELECT name,`&lt;br&gt;
-CASE
-WHEN imdb_rating &gt; 8 THEN 'Fantastic'
-WHEN imdb_rating &gt; 6 THEN 'Poorly Received'
-ELSE 'Avoid at All Costs'
-END AS 'Reviews
-FROM movies;
-</code></li>
+<li>Conditional Logic If-Then <br></li>
 </ul>
+
+<pre><code>SELECT name,
+ CASE
+  WHEN imdb_rating &gt; 8 THEN 'Fantastic'
+  WHEN imdb_rating &gt; 6 THEN 'Poorly Received'
+  ELSE 'Avoid at All Costs'
+ END AS 'Reviews
+FROM movies;
+</code></pre>
 
 <h2 id="aggregate-functions">Aggregate Functions</h2>
 
@@ -186,21 +185,30 @@ FROM movies;
 <li>Maximum value in a column <code>SELECT MAX(downloads) FROM fake_apps;</code></li>
 <li>Minimum value in a column <code>SELECT MIN(downloads) FROM fake_apps;</code></li>
 <li>Average of a column <code>SELECT AVG(downloads) FROM fake_apps;</code></li>
-<li>Round the values a column to the number of decimal places specified <br><code>SELECT ROUND(price, 0) FROM fake_apps;</code><br> <code>SELECT name, ROUND(AVG(price), 2) FROM fake_apps;</code></li>
+<li>Round the values a column to the number of decimal places specified <br></li>
+</ul>
+
+<pre><code>SELECT ROUND(price, 0) FROM fake_apps;
+SELECT name, ROUND(AVG(price), 2) FROM fake_apps;
+</code></pre>
+
+<ul>
 <li>Grouping similar values <code>SELECT price, COUNT(*) FROM fake_apps GROUP BY price;</code></li>
 <li>Grouping values <code>SELECT ROUND(imdb_rating),COUNT(name) FROM movies GROUP BY 1 ORDER BY 1;</code> Here 1 refers to the first parameter in the SELECT, i.e ROUND(imdb_rating).</li>
-<li>Having is used to filter Group By results <br>
-<code>
-SELECT price, `&lt;br&gt;
-ROUND(AVG(downloads)), `&lt;br&gt;
-COUNT(*) `&lt;br&gt;
-FROM fake_apps `&lt;br&gt;
-GROUP BY price `&lt;br&gt;
-HAVING COUNT(*) &gt; 10; `&lt;br&gt;
-</code>
-GROUP BY is a clause used with aggregate functions to combine data from one or more columns.<br>
-HAVING limit the results of a query based on an aggregate property.<br></li>
+<li>Having is used to filter Group By results <br></li>
 </ul>
+
+<pre><code>SELECT price,
+   ROUND(AVG(downloads)),
+   COUNT(*)
+FROM fake_apps
+GROUP BY price 
+HAVING COUNT(*) &gt; 10;
+
+</code></pre>
+
+<p>GROUP BY is a clause used with aggregate functions to combine data from one or more columns.<br>
+HAVING limit the results of a query based on an aggregate property.<br></p>
 
 <h2 id="multiple-tables">Multiple Tables</h2>
 
@@ -217,7 +225,7 @@ ON orders.customer_id = customers.customer_id;
 
 <p>Let&rsquo;s break down this command:</p></li>
 
-<li><p>The first line selects certain columns, we can specify which ones we want or use *.</p></li>
+<li><p>The first line selects certain columns, we can specify which ones we want or use * (asterisk).</p></li>
 
 <li><p>The second line specifies the first table that we want to look in, orders</p></li>
 
@@ -353,17 +361,20 @@ JOIN customers
 ON previous_query.customer_id=customers.customer_id;
 </code></pre>
 
-<p>Essentially what we are doing above is:
-- Generate a temporary table and name it as <strong>previous_query</strong>
-- The temporary table has a customer ID and total subscriptions made by the customer, thus two columns
-- But the customer ID is not good looking, we want the customer name corresponding to it rather
-- Thus we join the customer table
-- Extract the names where the customer IDs match
-- Thus print those corresponding names.</p>
+<p>Essentially what we are doing above is:</p>
 
-<p>Pheww..! :P</p>
+<ul>
+<li>Generate a temporary table and name it as <strong>previous_query</strong></li>
+<li>The temporary table has a customer ID and total subscriptions made by the customer, thus two columns</li>
+<li>But the customer ID is not good looking, we want the customer name corresponding to it rather</li>
+<li>Thus we join the customer table</li>
+<li>Extract the names where the customer IDs match</li>
+<li>Thus print those corresponding names.</li>
+</ul>
 
-<p>Hope this help. :)</p>
+<p>Pheww..! :p</p>
+
+<p>Hope this helps. :)</p>
 
 <hr />
 
