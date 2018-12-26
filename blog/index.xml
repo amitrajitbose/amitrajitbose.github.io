@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 18 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Dec 2018 12:20:32 +0530</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hiding Input Cells On Jupyter Notebook</title>
+      <link>https://amitrajitbose.github.io/blog/hiding-input-cells-jupyter-notebook/</link>
+      <pubDate>Wed, 26 Dec 2018 12:20:32 +0530</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/hiding-input-cells-jupyter-notebook/</guid>
+      <description>Why Needed ? Sometimes we don&amp;rsquo;t want to show the code during presentation of the notebook, or sometimes the code can look really clumsy. Taking care of the code while tearing your hairs to find a better solution to a problem simultaneously is quite a mammoth task. Most tutorials on the web would suggest you to install nbextensions, an open-source notebook extension package for Jupyter notebooks. Definitely that is clean and easy, but I just don&amp;rsquo;t like installing things and junking up my workstation, rather I&amp;rsquo;d write a custom code to solve the problem.</description>
+    </item>
     
     <item>
       <title>SQL Handbook</title>
