@@ -4,7 +4,7 @@ html, body {
   background-color: #fff;
   font-family: 'Raleway', sans-serif;
   /* The html and body elements cannot have any padding or margin. */
-  border-top: 3px solid #26AECE;
+  border-top: 3px solid #FF6600;
   /*border-top: 3px solid #99a099;*/
 }
 
@@ -92,7 +92,7 @@ html, body {
   margin: 20px 0;
 }
 .container a {
-  color: #26AECE;
+  color: #FF6600;
 }
 .container a:hover {
   color: #267723;
@@ -117,7 +117,7 @@ html, body {
   font-size: 15px;
 }
 .panel-default h4 a, h5 a {
-  color: #26AECE;
+  color: #FF6600;
 }
 .panel-default h4 a:hover, h5 a:hover {
   color: #267723;
@@ -191,8 +191,8 @@ html, body {
   font-size: 10px;
 }
 div.footer{
-  border-bottom: 5px solid #26AECE;;
-  /*border-bottom: 5px solid #99a099;;*/
+  border-bottom: 5px solid #FF6600;; 
+  /*border-bottom: 5px solid #99a099;; 26AECE*/
 }
 /* Set the fixed height of the footer here */
 /*.footer {
