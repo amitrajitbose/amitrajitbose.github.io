@@ -6,15 +6,25 @@
     <description>Recent content in Blogs on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 26 Dec 2018 12:20:32 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Intro to Neural Nets With Pytorch</title>
+      <link>https://amitrajitbose.github.io/blog/intro-to-nn-pytorch/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/intro-to-nn-pytorch/</guid>
+      <description>Intro To Neural Networks with PyTorch Deep learning networks tend to be massive with dozens or hundreds of layers, that&amp;rsquo;s where the term &amp;ldquo;deep&amp;rdquo; comes from. PyTorch has a nice module nn that provides a nice way to efficiently build large neural networks. Let us together explore it in this blog.
+# Import necessary packages %matplotlib inline %config InlineBackend.figure_format = &#39;retina&#39; import numpy as np import torch import helper import matplotlib.</description>
+    </item>
+    
+    <item>
       <title>Hiding Input Cells On Jupyter Notebook</title>
       <link>https://amitrajitbose.github.io/blog/hiding-input-cells-jupyter-notebook/</link>
-      <pubDate>Wed, 26 Dec 2018 12:20:32 +0530</pubDate>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://amitrajitbose.github.io/blog/hiding-input-cells-jupyter-notebook/</guid>
       <description>Why Needed ? Sometimes we don&amp;rsquo;t want to show the code during presentation of the notebook, or sometimes the code can look really clumsy. Taking care of the code while tearing your hairs to find a better solution to a problem simultaneously is quite a mammoth task. Most tutorials on the web would suggest you to install nbextensions, an open-source notebook extension package for Jupyter notebooks. Definitely that is clean and easy, but I just don&amp;rsquo;t like installing things and junking up my workstation, rather I&amp;rsquo;d write a custom code to solve the problem.</description>
