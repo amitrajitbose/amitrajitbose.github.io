@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Maze Routing - Lee&#39;s Algoithm</title>
+      <title>Maze Routing - Lee&#39;s Algorithm</title>
       <link>https://amitrajitbose.github.io/blog/maze_routing_lee_algorithm/</link>
       <pubDate>Thu, 03 Jan 2019 18:16:13 +0530</pubDate>
       
       <guid>https://amitrajitbose.github.io/blog/maze_routing_lee_algorithm/</guid>
-      <description></description>
+      <description>What is a Maze Runner? According to Wikipedia, in electronic design automation, a maze runner is a connection routing method that represents the entire routing space as a grid. Parts of this grid are blocked by components, specialised areas, or already present wiring. The grid size corresponds to the wiring pitch of the area. The goal is to find a chain of grid cells that go from point A to point B.</description>
     </item>
     
   </channel>

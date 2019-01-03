@@ -10,7 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://amitrajitbose.github.io//img/favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
-    <title>Maze Routing - Lee&#39;s Algoithm</title>
+    <title>Maze Routing - Lee&#39;s Algorithm</title>
     <meta name="generator" content="Hugo 0.47.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
@@ -74,7 +74,7 @@ if (!doNotTrack) {
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://amitrajitbose.github.io/blog/maze_routing_lee_algorithm/">Maze Routing - Lee&#39;s Algoithm</a></strong>
+            <strong><a href="https://amitrajitbose.github.io/blog/maze_routing_lee_algorithm/">Maze Routing - Lee&#39;s Algorithm</a></strong>
           </h3>
         </div>
         <div class="blog-title">
@@ -90,6 +90,223 @@ if (!doNotTrack) {
           <div class="panel-body">
             <div class="blogpost">
               
+
+<h4 id="what-is-a-maze-runner">What is a Maze Runner?</h4>
+
+<p>According to Wikipedia, in electronic design automation, a maze runner is a connection routing method that represents the entire routing space as a grid. Parts of this grid are blocked by components, specialised areas, or already present wiring. The grid size corresponds to the wiring pitch of the area. The goal is to find a chain of grid cells that go from point A to point B.</p>
+
+<hr />
+
+<h4 id="simple-idea">Simple Idea</h4>
+
+<p>Assume that we have a matrix and some of the cells are blocked, thus we can neither go through them or over them. We have a source point in the matrix grid and a destination point. We need to calculate the minimum number of steps required to reach the destination, starting from the source given that we cannot move diagonally. The only possible moves are:</p>
+
+<ul>
+<li>Adjacent Left</li>
+<li>Adjacent Top</li>
+<li>Adjacent Right</li>
+<li>Adjacent Bottom</li>
+</ul>
+
+<p><img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8c%2FArrow_keys.jpg%2F300px-Arrow_keys.jpg&amp;f=1" alt="Directions" /></p>
+
+<p>Quite simple, huh!</p>
+
+<hr />
+
+<h4 id="maze-solving-algorithms">Maze Solving Algorithms</h4>
+
+<p>Although we have several popular maze solving algorithms, thanks to computer scientists, yet solving mazes efficiently is quite an area under research even today.</p>
+
+<p>According to <a href="https://en.wikipedia.org/wiki/Maze_solving_algorithm">Wiki</a>, there are a number of different maze solving algorithms, that is, automated methods for the solving of mazes. The random mouse, wall follower, Pledge, and Trémaux&rsquo;s algorithms are designed to be used inside the maze by a traveler with no prior knowledge of the maze, whereas the dead-end filling and shortest path algorithms are designed to be used by a person or computer program that can see the whole maze at once.</p>
+
+<p>One of the simplest methods that I found dead easy to get a grip on is the <strong>Lee&rsquo;s Algorithm</strong>. It uses a wave propagation style (a wave are all cells that can be reached in n steps) throughout the routing space. The wave stops when the target is reached, and the path is determined by backtracking through the cells.</p>
+
+<hr />
+
+<h4 id="lee-s-algorithm">Lee&rsquo;s Algorithm</h4>
+
+<p>The Lee algorithm is one possible and easy solution for maze routing problems based on breadth-first search. It always gives an optimal solution, if one exists, but is slow and requires considerable memory. It is highly applicable in global routing and detailed routing.</p>
+
+<blockquote>
+<p>The time and space complexity is of the order <strong>O(m x n)</strong>, i.e the size of the grid.</p>
+
+<p>Alas! :(</p>
+</blockquote>
+
+<p>Although, we can somewhat reduce the time by making a few optimizations such as halting the algorithm when we reach the destination and more.</p>
+
+<p>Let us have a look at the algorithm, after which we shall implement it in Python (my favourite :P).</p>
+
+<pre><code>Step 1 : 
+- Initialise start point, mark it with 0 in the **cost** matrix.
+
+Step 2 : 
+- REPEAT
+     - Mark all unlabeled neighbors of points marked with i with i+1
+     - Set i := i+1
+   UNTIL ((target reached) or (no points can be marked))
+
+Step 3:
+- go to the target point
+   REPEAT
+     - go to next node that has a lower mark than the current node
+     - add this node to path
+   UNTIL (start point reached)
+
+Step 4:
+- Block the path for future wirings
+- Delete all marks
+</code></pre>
+
+<h6 id="visualize-the-algorithm">Visualize The Algorithm</h6>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Lee_waveprop.png" alt="Lee Wavepropagation" /></p>
+
+<hr />
+
+<h4 id="modified-implementation">Modified Implementation</h4>
+
+<p>I have used two matrix, namely the cost matrix for storing the updated costs and a visited matrix to mark which cells are previously visited and thus marked once atleast. I have used a process queue to perform the recursive operations in a FIFO manner - first the left, then top, then right, then bottom, a simple clockwise approach from the current cell.</p>
+
+<h6 id="modifications">Modifications</h6>
+
+<ul>
+<li>Initialise the <strong>cost</strong> matrix with <strong>-1</strong>, initialise the <strong>visited</strong> matrix with <strong>False</strong>.</li>
+<li>Set cost(start) := 0</li>
+<li>Start from the point, mark it visited and check if Left is valid cell or not, thus add to process queue. Repeat the same for Top, Right and Bottom.</li>
+<li>Perform the first task from the process queue and operate on it in a FIFO fashion until there is no more remaining.</li>
+<li>If we&rsquo;ve encountered finish point or destination the halt the algorithm.</li>
+<li>We try to minimise the cost the reach each cell, if such a path is found.</li>
+</ul>
+
+<pre>
+    class Solution(object):
+    def __init__(self, maze, start, finish):
+        self.maze = maze
+        self.m = len(maze)
+        self.n = len(maze[0])
+        self.start = start
+        self.finish = finish
+        #CREATE VISITED MATRIX
+        self.visited = [[False for i in range(self.n)]for j in range(self.m)]
+        self.cost = [[-1 for i in range(self.n)]for j in range(self.m)]
+        #MARK START POINT TO ZERO
+        self.cost[start[0]][start[1]] = 0
+        self.visited[start[0]][start[1]] = True
+        self.queue = [] #PROCESS QUEUE
+
+    def dimension(self):
+        print("Grid Dimensions: ",self.m,"x",self.n)
+    
+    def isValid(self, x,y):
+        if(x<0 or y<0 or x>=self.m or y>=self.n):
+            return False
+        elif(self.maze[x][y]=='t'):
+            return False
+        else:
+            return True
+    
+    def printer(self, mat):
+        for i in range(len(mat)):
+            print(*mat[i])
+        print("--------------")
+    
+    def go(self):
+        if(len(self.queue)==0):
+            return
+
+        #self.printer(self.cost)
+        x,y=self.queue[0][0],self.queue[0][1]
+        self.queue.pop(0)
+
+        if(not self.isValid(x,y)):
+            return
+        elif(x==self.finish[0] and y==self.finish[1]):
+            return
+        else:
+            self.visited[x][y] = True
+            # LEFT
+            if(self.isValid(x,y-1) and not self.visited[x][y-1]):
+                self.queue.append((x,y-1))
+                if(self.cost[x][y-1] == -1):
+                    self.cost[x][y-1] = self.cost[x][y] + 1
+                else:
+                    self.cost[x][y-1] = min(self.cost[x][y] + 1, self.cost[x][y-1])
+            # TOP
+            if(self.isValid(x-1,y) and not self.visited[x-1][y]):
+                self.queue.append((x-1,y))
+                if(self.cost[x-1][y] == -1):
+                    self.cost[x-1][y] = self.cost[x][y] + 1
+                else:
+                    self.cost[x-1][y] = min(self.cost[x][y] + 1, self.cost[x-1][y])
+            # RIGHT
+            if(self.isValid(x,y+1) and not self.visited[x][y+1]):
+                self.queue.append((x,y+1))
+                if(self.cost[x][y+1] == -1):
+                    self.cost[x][y+1] = self.cost[x][y] + 1
+                else:
+                    self.cost[x][y+1] = min(self.cost[x][y] + 1, self.cost[x][y+1])
+            # BOTTOM
+            if(self.isValid(x+1,y) and not self.visited[x+1][y]):
+                self.queue.append((x+1,y))
+                if(self.cost[x+1][y] == -1):
+                    self.cost[x+1][y] = self.cost[x][y] + 1
+                else:
+                    self.cost[x+1][y] = min(self.cost[x][y] + 1, self.cost[x+1][y])
+            
+            self.go()
+            
+    def minCost(self):
+        self.queue.append((self.start[0], self.start[1]))
+        self.go()
+        return self.cost[self.finish[0]][self.finish[1]]
+            
+
+
+    s = Solution([['f', 'f', 'f', 'f'],['t', 't', 'f', 't'],['f', 'f', 'f', 'f'],['f', 'f', 'f', 'f']], (3,0), (0,0))
+    print(s.minCost())
+</pre>
+
+<h6 id="sample-input">Sample Input</h6>
+
+<pre>
+    [
+    [f, f, f, f],
+    [t, t, f, t],
+    [f, f, f, f],
+    [f, f, f, f]
+    ]
+
+    Start : (3,0)
+    Finish : (0,0)
+</pre>
+
+<p><em>Note : Cells marked with &rsquo;t&rsquo; are blocked.</em></p>
+
+<h6 id="sample-output">Sample Output</h6>
+
+<pre>
+    7
+</pre>
+
+<h6 id="explanation">Explanation</h6>
+
+<p><pre>
+    <u>Final Cost Matrix Looks Like This !</u>
+    [
+    [7, 6, 5, 6],
+    [-1, -1, 4, -1],
+    [1, 2, 3, 4],
+    [0, 1, 2, 3]
+    ]</p>
+
+<pre><code>To visualise how the algorithm works, uncomment the third line under the defination of go() function, i.e #self.printer(self.cost).
+</code></pre>
+
+<p></pre>
+Hope you enjoyed this problem too, just like I did. This actually appeared as a Google interview problem in the past. :-)</p>
+
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
@@ -114,8 +331,8 @@ if (!doNotTrack) {
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  <noscript>Please enable JavaScript to view the <a href="mailto:amitrajitbose9@gmail.com">Comments are disabled temporarily. Mail me please.</a></noscript>
+  <a href="mailto:amitrajitbose9@gmail.com" class="dsq-brlink">Comments are disabled temporarily. Mail me please.</a>
 </div>
         </div>
       </div>
