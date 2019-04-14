@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amitrajitbose.github.io/blog/course_review_dlai_1/</loc>
+    <lastmod>2019-04-14T14:54:50+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amitrajitbose.github.io/blog/maze_routing_lee_algorithm/</loc>
     <lastmod>2019-01-03T18:16:13+05:30</lastmod>
   </url>
@@ -75,13 +80,13 @@
   
   <url>
     <loc>https://amitrajitbose.github.io/</loc>
-    <lastmod>2019-01-03T18:16:13+05:30</lastmod>
+    <lastmod>2019-04-14T14:54:50+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amitrajitbose.github.io/blog/</loc>
-    <lastmod>2019-01-03T18:16:13+05:30</lastmod>
+    <lastmod>2019-04-14T14:54:50+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -177,6 +182,12 @@
   <url>
     <loc>https://amitrajitbose.github.io/tags/python/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amitrajitbose.github.io/tags/review/</loc>
+    <lastmod>2019-04-14T14:54:50+05:30</lastmod>
     <priority>0</priority>
   </url>
   

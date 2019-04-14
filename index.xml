@@ -6,10 +6,21 @@
     <description>Recent content on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 03 Jan 2019 18:16:13 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 14 Apr 2019 14:54:50 +0530</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Course Review - Intro To Tensorflow</title>
+      <link>https://amitrajitbose.github.io/blog/course_review_dlai_1/</link>
+      <pubDate>Sun, 14 Apr 2019 14:54:50 +0530</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/course_review_dlai_1/</guid>
+      <description>Introduction to TensorFlow for AI, ML, &amp;amp; DL (Source: deeplearning.ai)
+First and foremost, thanks to Coursera and deepLearning.ai for granting me the scholarship to take this course. I owe them. :)
+I have planned to write an honest and short review about the course, I just completed it today. Things that you need to know before taking this course, whether it is suitable for you and so on. So, let us directly jump in.</description>
+    </item>
     
     <item>
       <title>Maze Routing - Lee&#39;s Algorithm</title>
