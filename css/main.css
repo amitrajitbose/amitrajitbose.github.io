@@ -7,7 +7,8 @@
 html, body {
   height: 100%;
   background-color: #fff;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Inconsolata', monospace;
+  /*font-family: 'Raleway', sans-serif;*/
   /* The html and body elements cannot have any padding or margin. */
   border-top: 3px solid var(--main-primary-color);
   /*border-top: 3px solid #99a099;*/
