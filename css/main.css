@@ -7,9 +7,9 @@
 html, body {
   height: 100%;
   background-color: #fff;
-  font-family: 'Livvic', sans-serif;
+  /*font-family: 'Livvic', sans-serif;*/
   /*font-family: 'Inconsolata', monospace;*/
-  /*font-family: 'Raleway', sans-serif;*/
+  font-family: 'Raleway', sans-serif;
   /* The html and body elements cannot have any padding or margin. */
   border-top: 3px solid var(--main-primary-color);
   /*border-top: 3px solid #99a099;*/
@@ -198,7 +198,7 @@ html, body {
   font-size: 10px;
 }
 div.footer{
-  border-bottom: 5px solid var(--main-primary-color);; 
+  border-bottom: 5px solid #FFFFFF;; 
   /*border-bottom: 5px solid #99a099;; 26AECE*/
 }
 /* Set the fixed height of the footer here */
