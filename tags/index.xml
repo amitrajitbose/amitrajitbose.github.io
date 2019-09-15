@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 03 Jan 2019 18:16:13 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 07:41:30 +0530</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Algorithms</title>
       <link>https://amitrajitbose.github.io/tags/algorithms/</link>
-      <pubDate>Thu, 03 Jan 2019 18:16:13 +0530</pubDate>
+      <pubDate>Sun, 15 Sep 2019 07:41:30 +0530</pubDate>
       
       <guid>https://amitrajitbose.github.io/tags/algorithms/</guid>
       <description></description>
@@ -62,6 +62,15 @@
       <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://amitrajitbose.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interviews</title>
+      <link>https://amitrajitbose.github.io/tags/interviews/</link>
+      <pubDate>Sun, 15 Sep 2019 07:41:30 +0530</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/tags/interviews/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,22 @@
     <description>Recent content on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 13 Sep 2019 14:03:43 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 07:41:30 +0530</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Understanding The Sliding Window Maximum Problem</title>
+      <link>https://amitrajitbose.github.io/blog/understanding_sliding_window_maximum/</link>
+      <pubDate>Sun, 15 Sep 2019 07:41:30 +0530</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/understanding_sliding_window_maximum/</guid>
+      <description>In this blog, I aim at explaining a very popular coding interview question to my readers, commonly known as Sliding Window Maximum, this formally goes like this
+ Given an array A and an integer K. Find the maximum for each and every contiguous subarray of size K.
+ Sample Input : arr = [9,6,11,8,10,5,4,13,93,14], window_size = 4 Sample Output : 11,11,11,10,13,93,93
+I would be touching upon all the ineffective approaches, but would no go in depth for those.</description>
+    </item>
     
     <item>
       <title>How I Automated Git Commands On Linux</title>

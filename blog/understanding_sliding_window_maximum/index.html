@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Amitrajit Bose" />
+    <meta name="description" content="Personal Portfolio">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://amitrajitbose.github.io//img/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    <title>Understanding The Sliding Window Maximum Problem</title>
+    <meta name="generator" content="Hugo 0.47.1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-124320658-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://amitrajitbose.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="https://www.stackoverflow.com/story/amitrajitbose">EXPERIENCE</a></li>
+        
+        <li><a href="mailto:amitrajitbose9@gmail.com?subject=Interested%20In%20The%20Resume&amp;body=Hi%20Amitrajit,%0D%0A%0D%0ASend%20me%20your%20latest%20resume.%0D%0A%0D%0AThanks%0D%0A">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://amitrajitbose.github.io/blog/understanding_sliding_window_maximum/">Understanding The Sliding Window Maximum Problem</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          September 15, 2019
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">Algorithms</span>
+            
+            <span class="label label-success">Interviews</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<p>In this blog, I aim at explaining a very popular coding interview question to my readers, commonly known as <strong>Sliding Window Maximum</strong>, this formally goes like this</p>
+
+<blockquote>
+<p>Given an array <strong>A</strong> and an integer <strong>K</strong>. Find the maximum for each and every contiguous subarray of size K.</p>
+</blockquote>
+
+<p><strong>Sample Input</strong> : <code>arr = [9,6,11,8,10,5,4,13,93,14], window_size = 4</code> <br>
+<strong>Sample Output</strong> : <code>11,11,11,10,13,93,93</code></p>
+
+<p>I would be touching upon all the ineffective approaches, but would no go in depth for those.</p>
+
+<h2 id="naive-approach">Naive Approach</h2>
+
+<p>Just run a loop from position <code>0</code> to position <code>n-k</code>, for each position just consider the subsequent subarray of length k and then calculate maximum. The complexity for this approach would be <code>O(n log (k))</code>. This is very similar to a sliding window protocol, and then calculating maximum for each window.</p>
+
+<h2 id="using-self-balancing-bst">Using Self Balancing BST</h2>
+
+<p>This is another good try. Pick the first K elements and add it to an BST. Run a loop <code>for i = 0 to n – k</code>
+1.  Get the maximum element from the BST, and print it.
+2.  Search for arr[i] in the BST and delete it from the BST.
+3.  Insert arr[i+k] into the BST.</p>
+
+<p>Again this would cost us an overall runtime of <code>O(kLogk + (n-k+1)*Logk)</code> which is asymptotically <code>O(n log (k))</code>.</p>
+
+<h2 id="using-deque">Using Deque</h2>
+
+<p>A deque is a <strong>double ended queue</strong>, a very interest modification of a simple queue, thus supporting insertion and removal at both ends (front and rear). The idea is to not recompute the maximum for each window again and again.
+The algorithm can be divided into two major steps.</p>
+
+<h4 id="stage-1">Stage 1</h4>
+
+<p><strong>Add the first K elements in the Deque</strong></p>
+
+<ul>
+<li>Define the deque</li>
+<li>For i = 0 upto K-1</li>
+<li>(i) Remove all elements from the <strong>rear</strong> of the Deque which are less than current element (arr[i]), <em>this is because they would never be used for this window or upcoming windows</em>.</li>
+<li>(ii) Add the index of the current element (i) to the Deque</li>
+</ul>
+
+<p>At the end of the first stage it is very clear that our deque will contain a monotonically decreasing sequence (i.e. <code>arr[i] &gt;= arr[i+1]</code>). Another observation is that, the first item at the <strong>front</strong> of the deque is the maximum for the first window.</p>
+
+<h4 id="stage-2">Stage 2</h4>
+
+<p><strong>Add remaining N-K elements in the Deque</strong>
+Remember, we need to maintain the <strong>size</strong> and <strong>order of elements</strong> in the deque. At any point of time it is always a monotonically decreasing sequence inside the deque.</p>
+
+<p><img src="data:image/png;base64,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" alt="" /></p>
+
+<ul>
+<li>For i = K upto N-1</li>
+<li>(i) Dequeue the item at the <strong>front</strong>, it is the maximum of the previous window. You can print it or store it.</li>
+<li>(ii) Remove the elements from Deque, that do not belong to the current window from the <strong>front</strong>. Elements should be within the range <code>(i-k)+1 upto i</code> otherwise just remove from the front.</li>
+<li>(iii) Remove all elements from the <strong>rear</strong> of the Deque which are less than current element (arr[i]), <em>this is because they would never be used for this window or upcoming windows</em>.</li>
+<li>(iv)  Add the index of the current element (i) to the Deque</li>
+<li>Finally, after the loop &mdash; Dequeue once from the front to get the maximum of the last window.</li>
+</ul>
+
+<h2 id="example-dry-run">Example Dry Run</h2>
+
+<ul>
+<li>Input = <code>arr = [9,6,11,8,10,5,4,13,93,14], window_size = 4</code></li>
+<li>Initially <code>deque([])</code></li>
+<li>Add 0(=9) to deque, followed by 1(=6), thus <code>deque([0, 1])</code></li>
+<li>11 is greater than 6, 9 thus they are removed. Now <code>deque([2])</code></li>
+<li>Add 3(=8) to deque, thus <code>deque([2, 3])</code></li>
+</ul>
+
+<p>Thus, the first K elements have been processed.</p>
+
+<ul>
+<li>Adding element 10 will result in removal of element 8. Thus current state becomes <code>deque([2, 4])</code></li>
+<li>Add 5(=5) thus <code>deque([2, 4, 5])</code></li>
+<li>Before adding 6(=4) we need to clean up the Deque, remove the elements which do not belong in this window. Thus remove index 2 from the Deque. Then add index 6 (=4). Thus <code>deque([4, 5, 6])</code></li>
+<li>Adding 13, the previous elements are all smaller than it. Thus they will be removed. Thus <code>deque([7])</code></li>
+<li>Similarly, 93 is greater than 13 (which is the only item in the Deque), thus will be removed. Therefore, <code>deque([8])</code></li>
+</ul>
+
+<p>Note that, at each state of the Deque, the <em>first element</em> is the <em>maximum of the previous window</em>, thus we keep collection the maximums from the front of the Deque as we slide it through the array.</p>
+
+<h2 id="code">Code</h2>
+
+<p><img src="https://i.ibb.co/y0HpSzy/carbon-2.png" alt="" /></p>
+
+<p>Clearly, the runtime for our code is linear, that is <code>O(n)</code>. This can also be implemented using a stack instead of a Deque as well. Check <a href="https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k-using-stack-in-on-time/">this post</a> for more details.</p>
+
+<p>An alternative version of this problem is the <strong>Sliding Window Minimum</strong>. I would suggest you to think on what modification we need to the above algorithm solve that problem.</p>
+
+<p><em>This problem has been asked in coding interviews for several top tech companies like Google, Amazon, Facebook, Walmart, Flipkart, Directi, SAP Labs, etc.</em></p>
+
+<p>Good luck for your interviews!</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 3, 2019
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/maze_routing_lee_algorithm/">Maze Routing - Lee&rsquo;s Algorithm</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'amitrajitbose';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+  
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+    	<p class="text-muted">&copy; 2018-2019 Amitrajit Bose. All Rights Reserved</p>
+      
+
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://amitrajitbose.github.io/js/docs.min.js"></script>
+<script src="https://amitrajitbose.github.io/js/main.js"></script>
+
+<script src="https://amitrajitbose.github.io/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
