@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Amitrajit Bose" />
+    <meta name="description" content="Personal Portfolio">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://amitrajitbose.github.io//img/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    <title>Handling Imbalanced Datasets Using SMOTE</title>
+    <meta name="generator" content="Hugo 0.47.1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-124320658-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://amitrajitbose.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="https://www.stackoverflow.com/story/amitrajitbose">EXPERIENCE</a></li>
+        
+        <li><a href="mailto:amitrajitbose9@gmail.com?subject=Interested%20In%20The%20Resume&amp;body=Hi%20Amitrajit,%0D%0A%0D%0ASend%20me%20your%20latest%20resume.%0D%0A%0D%0AThanks%0D%0A">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://amitrajitbose.github.io/blog/smote/">Handling Imbalanced Datasets Using SMOTE</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          October 16, 2019
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">machine-learning</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<p><a href="http://www.fantasyfutopia.com/python-for-fantasy-football-addressing-class-imbalance-part-2/"><img src="http://www.fantasyfutopia.com/wp-content/uploads/2019/02/pca_orig.png" alt="Cover Picture" /></a></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Close your eyes. Now imagine a perfect data world. What do you see? What do you wish to see? Exactly, me too. A flawlessly balanced dataset. A collection of data whose labels form a magnificent 1:1 ratio: 50% of this, 50% of that; not a bit to the left, nor a bit to the right. Just perfectly balanced, as all things should be. Now open your eyes, and come back to the real world.</p>
+
+<p>The opposite of a pure balanced dataset is a <strong>highly imbalanced dataset</strong>, and unfortunately for us, these are quite common. An imbalanced dataset is a dataset where the number of data points per class differs drastically, resulting in a heavily biased machine learning model that won’t be able to learn the minority class. When this imbalanced ratio is not so heavily skewed toward one class, such dataset is not that horrible, since many machine learning models can handle them.</p>
+
+<p>Nevertheless, there are some extreme cases in which the class ratio is just wrong, for example, a dataset where 95% of the labels belong to class A, while the remaining 5% fall under class B– a ratio not so rare in use cases such as fraud detection. In these extreme cases, the ideal course of action would be to collect more data.</p>
+
+<p>However, this is typically not feasible; in fact, it’s costly, time-consuming and in most cases, impossible. Luckily for us, there’s an alternative known as oversampling. Oversampling involves using the data we currently have to create more of it.</p>
+
+<h2 id="what-is-data-oversampling">What is data oversampling?</h2>
+
+<p>Data oversampling is a technique applied to generate data in such a way that it resembles the underlying distribution of the real data. In this article, I explain how we can use an oversampling technique called Synthetic Minority Over-Sampling Technique or SMOTE to balance out our dataset.</p>
+
+<h2 id="what-is-smote">What is SMOTE?</h2>
+
+<p>SMOTE is an oversampling algorithm that relies on the concept of nearest neighbors to create its synthetic data. Proposed back in 2002 by Chawla et. al., SMOTE has become one of the most popular algorithms for oversampling.</p>
+
+<p>The simplest case of oversampling is simply called oversampling or upsampling, meaning a method used to duplicate randomly selected data observations from the outnumbered class.</p>
+
+<p>Oversampling’s purpose is for us to feel confident the data we generate are real examples of already existing data. This inherently comes with the issue of creating more of the same data we currently have, without adding any diversity to our dataset, and producing effects such as overfitting.</p>
+
+<p>Hence, if overfitting affects our training due to randomly generated, upsampled data– or if plain oversampling is not suitable for the task at hand– we could resort to another, smarter oversampling technique known as synthetic data generation.</p>
+
+<p>Synthetic data is intelligently generated artificial data that resembles the shape or values of the data it is intended to enhance. Instead of merely making new examples by copying the data we already have (as explained in the last paragraph), a synthetic data generator creates data that is similar to the existing one. Creating synthetic data is where SMOTE shines.</p>
+
+<h2 id="how-does-smote-work">How does SMOTE work?</h2>
+
+<p>To show how SMOTE works, suppose we have an imbalanced two-dimensional dataset, such as the one in the next image, and we want to use SMOTE to create new data points.</p>
+
+<p><img src="https://kite.com/wp-content/uploads/2019/08/imbalance-dataset.jpg" alt="Imbalanced Dataset" /></p>
+
+<blockquote>
+<p>For each observation that belongs to the under-represented class, the algorithm gets its <strong>K-nearest-neighbors and synthesizes a new instance of the minority label at a random location in the line between the current observation and its nearest neighbor</strong>.</p>
+</blockquote>
+
+<p>In our example (shown in the next image), the blue encircled dot is the current observation, the blue non-encircled dot is its nearest neighbor, and the green dot is the synthetic one.</p>
+
+<p><img src="https://kite.com/wp-content/uploads/2019/08/SMOTEs-new-synthetic-data-point.jpg" alt="SMOTE Working" /></p>
+
+<p>Let&rsquo;s have a look at another visualization below. On the left, we can see a complete picture of the entire dataset where the red circles represent the <strong>minority class</strong>. The figure on the right is a zoomed in version of the same. The solid red circles are the original data-points, whereas the blank red circles denote the randomly generated new synthetic data-points using SMOTE algorithm, as discussed above.</p>
+
+<p><img src="https://i.ibb.co/kgN0vjJ/smote-viz.png" alt="SMOTE-Visual" /></p>
+
+<!-- <a href="https://ibb.co/vx0mRph"><img src="https://i.ibb.co/kgN0vjJ/smote-viz.png" alt="smote-viz" border="0"></a> -->
+
+<h2 id="implementation">Implementation</h2>
+
+<p>First we&rsquo;ll be creating a balanced dataset and train a SVM model on it.</p>
+
+<pre><code>import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn.svm import SVC
+
+
+def train_SVM(df):
+   # select the feature columns
+   X = df.loc[:, df.columns != 'label']
+   # select the label column
+   y = df.label
+
+   # train an SVM with linear kernel
+   clf = SVC(kernel='linear')
+   clf.fit(X, y)
+
+   return clf
+
+
+def plot_svm_boundary(clf, df, title):
+   fig, ax = plt.subplots()
+   X0, X1 = df.iloc[:, 0], df.iloc[:, 1]
+
+   x_min, x_max = X0.min() - 1, X0.max() + 1
+   y_min, y_max = X1.min() - 1, X1.max() + 1
+   xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02), np.arange(y_min, y_max, 0.02))
+
+   Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
+   Z = Z.reshape(xx.shape)
+   out = ax.contourf(xx, yy, Z, cmap=plt.cm.coolwarm, alpha=0.8)
+
+   ax.scatter(X0, X1, c=df.label, cmap=plt.cm.coolwarm, s=20, edgecolors='k')
+   ax.set_ylabel('y')
+   ax.set_xlabel('x')
+   ax.set_title(title)
+   plt.show()
+
+df = pd.read_csv('df_base.csv', encoding='utf-8', engine='python')
+clf = train_SVM(df)
+plot_svm_boundary(clf, df, 'Decision Boundary of SVM trained with a balanced dataset')
+</code></pre>
+
+<p><img src="https://kite.com/wp-content/uploads/2019/08/SVM-Trained-balanced-dataset.jpg" alt="" /></p>
+
+<p>Now we&rsquo;ll be creating an imbalanced dataset using the <strong>make_imbalance()</strong> method of <strong>imbalanced-learn</strong>. We use a ratio of <code>340:10</code>.</p>
+
+<pre><code>X_res, y_res = make_imbalance(X1, Y1, sampling_strategy={0: 340, 1: 10}, random_state=seed)
+plt.title('Imbalanced dataset')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.scatter(X_res[:, 0], X_res[:, 1], marker='o', c=y_res,
+           s=25, edgecolor='k', cmap=plt.cm.coolwarm)
+plt.show()
+
+
+df = pd.concat([pd.DataFrame(X_res), pd.DataFrame(y_res)], axis=1)
+df.columns = ['feature_1', 'feature_2', 'label']
+df.to_csv('df_imbalanced.csv', index=False, encoding='utf-8')
+</code></pre>
+
+<p><img src="https://kite.com/wp-content/uploads/2019/08/heavily-imbalanced-dataset.jpg" alt="" /></p>
+
+<p>If we train a new SVM model on this above imbalanced dataset, it would be overfitted on the majority class. This is how it will look.</p>
+
+<p><img src="https://kite.com/wp-content/uploads/2019/08/SVM-Decision-boundary.jpg" alt="" /></p>
+
+<p>Now we&rsquo;ll be applying SMOTE using the following code. Different values of <strong>k</strong> will result in different datasets.</p>
+
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+from imblearn.over_sampling import SMOTE
+
+# for reproducibility purposes
+seed = 100
+# SMOTE number of neighbors
+k = 1 # Define it as per requirement
+
+df = pd.read_csv('df_imbalanced.csv', encoding='utf-8', engine='python')
+# make a new df made of all the columns, except the target class
+X = df.loc[:, df.columns != 'label']
+y = df.label
+sm = SMOTE(sampling_strategy='auto', k_neighbors=k, random_state=seed)
+X_res, y_res = sm.fit_resample(X, y)
+
+df = pd.concat([pd.DataFrame(X_res), pd.DataFrame(y_res)], axis=1)
+# rename the columns
+df.columns = ['feature_1', 'feature_2', 'label']
+df.to_csv('df_smoted.csv', index=False, encoding='utf-8')
+</code></pre>
+
+<style type="text/css">
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 1px;
+}
+</style>
+
+<div class="row">
+  <div class="column">
+    <img src="https://kite.com/wp-content/uploads/2019/08/SMOTE-enhanced-dataset.jpg" alt="Snow" style="width:110%">
+  </div>
+
+<p><div class="column">
+    <img src="https://kite.com/wp-content/uploads/2019/08/SMOTE-enhanced-dataset2.jpg" alt="Forest" style="width:110%">
+  </div></p>
+
+<p><div class="column">
+    <img src="https://kite.com/wp-content/uploads/2019/08/SMOTE-enhanced-dataset3.jpg" alt="Mountains" style="width:110%">
+  </div>
+</div></p>
+
+<blockquote>
+<p><strong>Explanation For Parameter K</strong></p>
+
+<p>The explanation behind this phenomenon is that when we are using <code>k=1</code>, we&rsquo;re setting the number of neighbors to 1 which implies that during each iteration of SMOTE, the algorithm creates artificial data between the point it’s currently examining and the one that it’s closer to (as we see in the leftmost figure above).</p>
+</blockquote>
+
+<p>Now we train an SVM on the SMOTE balanced dataset and compare the hyperplanes for the balanced and unbalanced datasets.</p>
+
+<pre><code>df = pd.read_csv('df_smoted.csv', encoding='utf-8', engine='python')
+clf = train_SVM(df)
+plot_svm_boundary(clf, df, 'Decision Boundary of SVM trained with a synthetic dataset')
+</code></pre>
+
+<p><img src="https://kite.com/wp-content/uploads/2019/08/Balanced-and-SMOTEd-model.jpg" alt="" /></p>
+
+<p>The left image shows the decision boundary of the original model, while the right one displays that of the SMOTE’d model. For starters, the hyperplane of the SMOTE’d model seems to favor the blue class, while the original SVM sides with the red class. We can assume that the cause of this hyperplane shape is the lack of noisy red points among the blue cluster.</p>
+
+<p>Contrarily, the base dataset has several red points within the blue cluster, which might create a bit of bias on the model. The red region of the hyperplane is then pulled down since the model makes an effort to learn about those points. Thus, we can conclude that thanks to SMOTE, the algorithm was able to find a decision function that learned to separate our originally imbalanced dataset into two classes.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>If you&rsquo;re a data scientist, you&rsquo;ll need to synthetically balance datasets at some point or the other. SMOTE is a standard oversampling method which has been well tried and tested by many, and is used extensively. Some other methods include ADASYN, Random oversampling, etc.</p>
+
+<p>In the tutorial, we explored how the decision boundary of an SVM model evolves and reacts when fit with a balanced dataset, an imbalanced dataset, and a dataset enhanced by synthetic data produced with SMOTE. As a result, we obtained a model with a clear decision boundary that separated both classes.</p>
+
+<p>Example code for this article may be found <a href="https://github.com/kiteco/kite-python-blog-post-code/tree/master/smote">here</a>.</p>
+
+<hr />
+
+<blockquote>
+<p>This article has been inspired from the <a href="https://kite.com/blog/python/smote-python-imbalanced-learn-for-oversampling/">Kite blog</a>. Kite is a plugin for your IDE that uses machine learning to give you useful code completions for Python. <a href="https://kite.com/">Download for FREE today</a>.</p>
+</blockquote>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        September 5, 2019
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/tensorflow_vs_pytorch/">Tensorflow Vs PyTorch</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        December 27, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/intro-to-nn-pytorch/">Intro to Neural Nets With Pytorch</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        December 26, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/hiding-input-cells-jupyter-notebook/">Hiding Input Cells On Jupyter Notebook</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'amitrajitbose';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+  
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+    	<p class="text-muted">&copy; 2018-2019 Amitrajit Bose. All Rights Reserved</p>
+      
+
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://amitrajitbose.github.io/js/docs.min.js"></script>
+<script src="https://amitrajitbose.github.io/js/main.js"></script>
+
+<script src="https://amitrajitbose.github.io/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>

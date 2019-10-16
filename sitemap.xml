@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amitrajitbose.github.io/blog/smote/</loc>
+    <lastmod>2019-10-16T09:34:24+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amitrajitbose.github.io/blog/understanding_sliding_window_maximum/</loc>
     <lastmod>2019-09-15T07:41:30+05:30</lastmod>
   </url>
@@ -75,13 +80,13 @@
   
   <url>
     <loc>https://amitrajitbose.github.io/</loc>
-    <lastmod>2019-09-15T07:41:30+05:30</lastmod>
+    <lastmod>2019-10-16T09:34:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amitrajitbose.github.io/blog/</loc>
-    <lastmod>2019-09-15T07:41:30+05:30</lastmod>
+    <lastmod>2019-10-16T09:34:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,7 +145,7 @@
   
   <url>
     <loc>https://amitrajitbose.github.io/tags/machine-learning/</loc>
-    <lastmod>2019-09-05T03:23:10+05:30</lastmod>
+    <lastmod>2019-10-16T09:34:24+05:30</lastmod>
     <priority>0</priority>
   </url>
   

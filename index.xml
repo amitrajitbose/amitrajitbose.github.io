@@ -6,10 +6,19 @@
     <description>Recent content on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 15 Sep 2019 07:41:30 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 09:34:24 +0530</lastBuildDate>
     
 	<atom:link href="https://amitrajitbose.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Handling Imbalanced Datasets Using SMOTE</title>
+      <link>https://amitrajitbose.github.io/blog/smote/</link>
+      <pubDate>Wed, 16 Oct 2019 09:34:24 +0530</pubDate>
+      
+      <guid>https://amitrajitbose.github.io/blog/smote/</guid>
+      <description>Introduction Close your eyes. Now imagine a perfect data world. What do you see? What do you wish to see? Exactly, me too. A flawlessly balanced dataset. A collection of data whose labels form a magnificent 1:1 ratio: 50% of this, 50% of that; not a bit to the left, nor a bit to the right. Just perfectly balanced, as all things should be. Now open your eyes, and come back to the real world.</description>
+    </item>
     
     <item>
       <title>Understanding The Sliding Window Maximum Problem</title>
