@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amitrajitbose.github.io/blog/beingamentorforgooglecodein/</loc>
+    <lastmod>2020-03-04T23:18:10+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amitrajitbose.github.io/blog/smote/</loc>
     <lastmod>2019-10-16T09:34:24+05:30</lastmod>
   </url>
@@ -80,13 +85,13 @@
   
   <url>
     <loc>https://amitrajitbose.github.io/</loc>
-    <lastmod>2019-10-16T09:34:24+05:30</lastmod>
+    <lastmod>2020-03-04T23:18:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://amitrajitbose.github.io/blog/</loc>
-    <lastmod>2019-10-16T09:34:24+05:30</lastmod>
+    <lastmod>2020-03-04T23:18:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,6 +133,12 @@
   <url>
     <loc>https://amitrajitbose.github.io/categories/development/</loc>
     <lastmod>2018-08-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://amitrajitbose.github.io/tags/experiences/</loc>
+    <lastmod>2020-03-04T23:18:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
