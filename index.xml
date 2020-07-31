@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Amitrajit Bose</title>
@@ -68,7 +68,7 @@ I love to maintain repositories for my ongoing projects so as to keep track of m
       
       <guid>https://amitrajitbose.github.io/blog/course_review_dlai_1/</guid>
       <description>Introduction to TensorFlow for AI, ML, &amp;amp; DL (Source: deeplearning.ai)
-First and foremost, thanks to Coursera and deepLearning.ai for granting me the scholarship to take this course. I owe them. :)
+ First and foremost, thanks to Coursera and deepLearning.ai for granting me the scholarship to take this course. I owe them. :)
 I have planned to write an honest and short review about the course, I just completed it today. Things that you need to know before taking this course, whether it is suitable for you and so on. So, let us directly jump in.</description>
     </item>
     
@@ -88,7 +88,7 @@ I have planned to write an honest and short review about the course, I just comp
       
       <guid>https://amitrajitbose.github.io/blog/intro-to-nn-pytorch/</guid>
       <description>Intro To Neural Networks with PyTorch Deep learning networks tend to be massive with dozens or hundreds of layers, that&amp;rsquo;s where the term &amp;ldquo;deep&amp;rdquo; comes from. PyTorch has a nice module nn that provides a nice way to efficiently build large neural networks. Let us together explore it in this blog.
-# Import necessary packages %matplotlib inline %config InlineBackend.figure_format = &#39;retina&#39; import numpy as np import torch import helper import matplotlib.</description>
+# Import necessary packages %matplotlib inline %config InlineBackend.figure_format = &amp;#39;retina&amp;#39; import numpy as np import torch import helper import matplotlib.</description>
     </item>
     
     <item>
@@ -106,7 +106,7 @@ I have planned to write an honest and short review about the course, I just comp
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://amitrajitbose.github.io/blog/sqlhandbook/</guid>
-      <description>SQL Handbook Author : Amitrajit Bose Data Types in Oracle SQL  VARCHAR2(size) NVARCHAR2(size) NUMBER[(precision) LONG DATE BINARY_FLOAT BINARY_DOUBLE CHAR [(size)] N.B: This tutorial uses SQLite, although most features are same as Oracle SQL and other variants  SQL Manipulation  Create Table CREATE TABLE celebs(id INTEGER, name TEXT, age INTEGER ); Insert Rows INSERT INTO celebs (id, name, age) VALUES (1, &#39;Justin Bieber&#39;, 21); Select Queries SELECT * FROM mytable; Update Value UPDATE celebs SET age = 22 WHERE id = 1; Alter Table ALTER TABLE celebs ADD COLUMN twitter_handle TEXT; Delete Rows DELETE FROM celebs WHERE twitter_handle IS NULL; Add Constraint CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &amp;quot;Grammy&amp;quot; );</description>
+      <description>SQL Handbook Author : Amitrajit Bose Data Types in Oracle SQL  VARCHAR2(size) NVARCHAR2(size) NUMBER[(precision) LONG DATE BINARY_FLOAT BINARY_DOUBLE CHAR [(size)] N.B: This tutorial uses SQLite, although most features are same as Oracle SQL and other variants  SQL Manipulation  Create Table CREATE TABLE celebs(id INTEGER, name TEXT, age INTEGER ); Insert Rows INSERT INTO celebs (id, name, age) VALUES (1, &#39;Justin Bieber&#39;, 21); Select Queries SELECT * FROM mytable; Update Value UPDATE celebs SET age = 22 WHERE id = 1; Alter Table ALTER TABLE celebs ADD COLUMN twitter_handle TEXT; Delete Rows DELETE FROM celebs WHERE twitter_handle IS NULL; Add Constraint CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &amp;quot;Grammy&amp;quot; );  CREATE TABLE celebs ( id INTEGER PRIMARY KEY, name TEXT UNIQUE, date_of_birth TEXT NOT NULL, date_of_death TEXT DEFAULT &#39;Not Applicable&#39; ); More on constraints: Constraints that add information about how a column can be used are invoked after specifying the data type for a column.</description>
     </item>
     
     <item>
@@ -146,10 +146,7 @@ Schema &amp;amp; Instance  Schema - A schema is a physical or logical structure 
       
       <guid>https://amitrajitbose.github.io/blog/intro_relationalmodels/</guid>
       <description>Introduction To Relational Models Chapter Material
-Relation - an unordered collection of attributes or fields or columns of a table.
-Attributes - each column is an attribute.
-Domain - set of possible values that an attribute can take.
-Attribute Value - the data in a certain row and column, corresponing to a certain attribute. They are normally atomic, i.e indivisible data type. Mathematically, relation schema is a subset of multiple domain sets, or we can say a relational schema is a collection of attributes.</description>
+Relation - an unordered collection of attributes or fields or columns of a table.Attributes - each column is an attribute.Domain - set of possible values that an attribute can take.Attribute Value - the data in a certain row and column, corresponing to a certain attribute. They are normally atomic, i.e indivisible data type. Mathematically, relation schema is a subset of multiple domain sets, or we can say a relational schema is a collection of attributes.</description>
     </item>
     
     <item>

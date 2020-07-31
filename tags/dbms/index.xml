@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dbms on Amitrajit Bose</title>
+    <title>dbms on Amitrajit Bose</title>
     <link>https://amitrajitbose.github.io/tags/dbms/</link>
-    <description>Recent content in Dbms on Amitrajit Bose</description>
+    <description>Recent content in dbms on Amitrajit Bose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 18 Sep 2018 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://amitrajitbose.github.io/blog/sqlhandbook/</guid>
-      <description>SQL Handbook Author : Amitrajit Bose Data Types in Oracle SQL  VARCHAR2(size) NVARCHAR2(size) NUMBER[(precision) LONG DATE BINARY_FLOAT BINARY_DOUBLE CHAR [(size)] N.B: This tutorial uses SQLite, although most features are same as Oracle SQL and other variants  SQL Manipulation  Create Table CREATE TABLE celebs(id INTEGER, name TEXT, age INTEGER ); Insert Rows INSERT INTO celebs (id, name, age) VALUES (1, &#39;Justin Bieber&#39;, 21); Select Queries SELECT * FROM mytable; Update Value UPDATE celebs SET age = 22 WHERE id = 1; Alter Table ALTER TABLE celebs ADD COLUMN twitter_handle TEXT; Delete Rows DELETE FROM celebs WHERE twitter_handle IS NULL; Add Constraint CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &amp;quot;Grammy&amp;quot; );</description>
+      <description>SQL Handbook Author : Amitrajit Bose Data Types in Oracle SQL  VARCHAR2(size) NVARCHAR2(size) NUMBER[(precision) LONG DATE BINARY_FLOAT BINARY_DOUBLE CHAR [(size)] N.B: This tutorial uses SQLite, although most features are same as Oracle SQL and other variants  SQL Manipulation  Create Table CREATE TABLE celebs(id INTEGER, name TEXT, age INTEGER ); Insert Rows INSERT INTO celebs (id, name, age) VALUES (1, &#39;Justin Bieber&#39;, 21); Select Queries SELECT * FROM mytable; Update Value UPDATE celebs SET age = 22 WHERE id = 1; Alter Table ALTER TABLE celebs ADD COLUMN twitter_handle TEXT; Delete Rows DELETE FROM celebs WHERE twitter_handle IS NULL; Add Constraint CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &amp;quot;Grammy&amp;quot; );  CREATE TABLE celebs ( id INTEGER PRIMARY KEY, name TEXT UNIQUE, date_of_birth TEXT NOT NULL, date_of_death TEXT DEFAULT &#39;Not Applicable&#39; ); More on constraints: Constraints that add information about how a column can be used are invoked after specifying the data type for a column.</description>
     </item>
     
     <item>
@@ -37,10 +37,7 @@ Schema &amp;amp; Instance  Schema - A schema is a physical or logical structure 
       
       <guid>https://amitrajitbose.github.io/blog/intro_relationalmodels/</guid>
       <description>Introduction To Relational Models Chapter Material
-Relation - an unordered collection of attributes or fields or columns of a table.
-Attributes - each column is an attribute.
-Domain - set of possible values that an attribute can take.
-Attribute Value - the data in a certain row and column, corresponing to a certain attribute. They are normally atomic, i.e indivisible data type. Mathematically, relation schema is a subset of multiple domain sets, or we can say a relational schema is a collection of attributes.</description>
+Relation - an unordered collection of attributes or fields or columns of a table.Attributes - each column is an attribute.Domain - set of possible values that an attribute can take.Attribute Value - the data in a certain row and column, corresponing to a certain attribute. They are normally atomic, i.e indivisible data type. Mathematically, relation schema is a subset of multiple domain sets, or we can say a relational schema is a collection of attributes.</description>
     </item>
     
   </channel>

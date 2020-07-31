@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Amitrajit Bose" />
-    <meta name="description" content="Personal Portfolio">
+    <meta name="description" content="Amitrajit&#39;s Blog">
     
     <link rel="shortcut icon" type="image/x-icon" href="https://amitrajitbose.github.io//img/favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
     <title>Tensorflow Vs PyTorch</title>
-    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="generator" content="Hugo 0.74.3" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
     
@@ -46,7 +46,7 @@ if (!doNotTrack) {
       
       <nav class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header-dark">
       <a class="navbar-brand" href="https://amitrajitbose.github.io/"><i class="fa fa-home"></i></a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
@@ -56,7 +56,7 @@ if (!doNotTrack) {
     </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
-      
+        
         
         <li><a href="/blog/">BLOG</a></li>
         
@@ -64,14 +64,11 @@ if (!doNotTrack) {
         
         <li><a href="https://www.stackoverflow.com/story/amitrajitbose">EXPERIENCE</a></li>
         
-        <li><a href="mailto:amitrajitbose9@gmail.com?subject=Interested%20In%20The%20Resume&amp;body=Hi%20Amitrajit,%0D%0A%0D%0ASend%20me%20your%20latest%20resume.%0D%0A%0D%0AThanks%0D%0A">RESUME</a></li>
         
-      
       </ul>
     </div>
   </div>
 </nav>
-
       
       <div class="container">
         <div class="blog-post">
@@ -93,183 +90,112 @@ if (!doNotTrack) {
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              
-
-<p><img src="http://s3-eu-west-1.amazonaws.com/de-blog/uploads/2019/01/Tensorflow-VS-Pytorch-660x245.jpg" alt="Cover Pic" /></p>
-
+              <p><img src="http://s3-eu-west-1.amazonaws.com/de-blog/uploads/2019/01/Tensorflow-VS-Pytorch-660x245.jpg" alt="Cover Pic"></p>
 <p>Now that you have done quite a lot of machine learning and got those fundamentals solid, it is high time to start with neural networks and deep learning. Although you would not need it in most of the problem statements, it is like a superpower, you have complete control of how you want your network to be, how strong, how big, how weak, how cunning. Actually all you need is access to good data and lots of it. Yes, deep learning is data hungry and yeah, CPU hungry too. Once you get the fundamentals behind it right, you too would be able to understand why.</p>
-
-<p><img src="https://blog.playment.io/wp-content/uploads/2017/09/training-data-memes.jpg" alt="Battle For Training Data Can Be Nasty" /></p>
-
+<p><img src="https://blog.playment.io/wp-content/uploads/2017/09/training-data-memes.jpg" alt="Battle For Training Data Can Be Nasty"></p>
 <blockquote>
 <p>Indeed, it can be!</p>
 </blockquote>
-
 <p>Time to think about how you would do deep learning in practice! Yeah I know you&rsquo;re good in Python, Numpy, etc and obviously it feels like a hero to implement a convolutional or recurrent neural network from scratch. But we need speed and accuracy, we are more interested in the results from the trained model, we can just <strong>throw it away and move on to the next</strong> if it doesn&rsquo;t work rather than debugging the code that&rsquo;s written from scratch just to make it work. Basically, <strong>Why Re-invent The Wheel</strong>, yes I am talking about libraries and frameworks that make the life of developers a bit easier.</p>
-
 <p>Open-source frameworks have popped up, and now it can be confusing to decide on which library to use for which project. <strong>Tensorflow</strong> or <strong>PyTorch</strong>? Should I use <strong>Keras</strong> on top of <strong>Microsoft’s CNTK</strong>? What’s the best application to use <strong>MXNet</strong>? And obviously, you&rsquo;d need to spend some time and energy, learning these as well, so count that in too.</p>
-
 <p>Once you’ve determined the goals and overall priorities for your project or use-case, this article can help you select the language that is the best fit for your project. Some of the questions that you’ll need to consider include:</p>
-
 <ul>
 <li>Your confidence level with machine learning fundamentals</li>
 <li>If you will be using the framework for classic machine learning algorithms or for Deep Learning</li>
 <li>What application you will be using the framework for: be it heavy numerical computations, complex data analysis, image analysis, or education and research</li>
 <li>Whether or not you’ll be using any additional hardware (like GPUs and TPUs), software, or cloud services for scaling on to bigger data sets.</li>
 </ul>
-
 <p>Each open-source framework available today has its own strengths and weaknesses when measured across these factors. And choosing the best framework for your needs will really depend on just what you want to accomplish.</p>
-
 <p>For example, if you are new to machine learning or want to use classic machine learning algorithms, <strong>Scikit</strong> could be the best choice. On the other hand, if you need to do heavy numerical computations, <strong>Theano</strong> would work much better. In any case, no matter your specific situation – this guide will aim to help you figure out which framework is the perfect fit.</p>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt="" /></p>
-
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt=""></p>
 <h2 id="5-sci-kit-learn">5. Sci-Kit Learn</h2>
-
 <p><code>Ideal for: ML beginners</code></p>
-
 <p>Sci-kit Learn is a library that features a host of the classical machine learning algorithms like Support Vector Machines (SVMs), KNN Maps, K-Nearest Neighbors (KNN) classifiers, Random Forests, and regression algorithms. It includes options for both supervised and unsupervised learning. Thus, it’s ultimately an effective tool for statistical modeling.</p>
-
 <p>It has been built on many other Python libraries like SciPy, Numpy, and Matplotlib, and some of its core algorithms are also written using Cython. I created an example of a Sci-Kit operation here.</p>
-
 <h3 id="strengths">Strengths:</h3>
-
 <ul>
 <li>Great for beginners and for those looking to explore machine learning algorithms</li>
 <li>Good for data-mining and simple projects like predictions on small or labeled data sets</li>
 </ul>
-
 <h3 id="weaknesses">Weaknesses:</h3>
-
 <ul>
 <li>Does not support ANNs</li>
 <li>Does not support GPU computing</li>
 <li>What sets this framework apart from others is an easy-to-use interface for developers and a high level of abstraction that allows especially beginners in machine learning to get easily acquainted with the platform, without having to deal with the nitty-gritty of actual algorithms.</li>
 </ul>
-
 <p>It’s easy to run and debug, and there are some nice and easy tutorials available to help understand the algorithms when you do have to work with them. However, Sci-kit Learn does have a couple of limitations.</p>
-
 <p>First, it does not support Artificial Neural Networks.</p>
-
 <p>Second, it’s only suitable for small projects with small datasets, and for tasks that are not particularly computationally intensive. This is mainly due to the fact that the framework does not support GPU computing.</p>
-
 <p>For more seasoned or hard-core developers, it can feel limiting to some extent, as the abstraction doesn’t allow for fine tuning the underlying algorithms.</p>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Theano_logo.svg/1200px-Theano_logo.svg.png" alt="" /></p>
-
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Theano_logo.svg/1200px-Theano_logo.svg.png" alt=""></p>
 <h2 id="4-theano">4. Theano</h2>
-
 <p><code>Ideal for: Hardcore developers requiring high-speed computation over a single GPU</code></p>
-
 <p>If you’re looking for a framework that can crunch numbers like a pro, then Theano will be your best bet.</p>
-
 <p>Theano is a workhorse well-equipped for numerical computing and sits under a large number of other deep learning frameworks like Tensorflow and Keras. The framework lets you efficiently work with mathematical expressions that include multi-dimensional arrays.</p>
-
 <h3 id="strengths-1">Strengths:</h3>
-
 <ul>
 <li>Efficiency in crunching large and multi-dimensional data sets</li>
 <li>Provides the developer ample flexibility to fine-tune underlying algorithms and create novel models.</li>
 </ul>
-
 <h3 id="weakness">Weakness:</h3>
-
 <ul>
 <li>A very steep learning curve</li>
 <li>Does not support scaling over multiple GPUs</li>
 <li>While Sci-kit Learn is for beginners, Theano is only for advanced deep learning experts.</li>
 </ul>
-
 <p>The API is low-level, so you really need feel comfortable in your coding abilities if you’re looking to explore this framework. The syntax for Theano is quite tightly integrated with NumPy and its code can run efficiently – both on a CPU and a GPU. You can see an example of a script using Therano here.</p>
-
 <p>In contrast to Sci-kit learn, Theano empowers any developer with a complete flexibility to fine-tune and control their models. It even allows the developer to implement and test completely unconventional models.</p>
-
 <p>Although Theano works better than Tensorflow over a single GPU, it still doesn’t match up to Tensorflow when working with multiple GPUs.</p>
-
 <p>However, since Theano has been around longer, it does have a lot more documentation. The biggest drawback is that MILA, the makers of Theano, have decided to stop maintaining the framework following its 1.0 release. Nonetheless, it continues to be a great choice for avid deep learning enthusiasts.</p>
-
-<p><img src="https://ih1.redbubble.net/image.405703018.0204/flat,800x800,070,f.u1.jpg" alt="" /></p>
-
+<p><img src="https://ih1.redbubble.net/image.405703018.0204/flat,800x800,070,f.u1.jpg" alt=""></p>
 <h2 id="3-caffe">3. Caffe</h2>
-
 <p><code>Ideal for: Mid-level programmers and image processing</code></p>
-
 <p>Caffe (Convolutional Architecture for Fast Feature Embedding) was mainly built to support Convolutional Neural Networks (CNNs) and is the framework of choice for those working on computer vision, image processing, and feedforward networks.</p>
-
 <p>The framework is a Python-based API, which was mainly written in C++. Models in Caffe are represented by Protobuf configuration files and the framework, is, in fact, the fastest CNN implementation among all Deep Learning frameworks.</p>
-
 <p>It works well on image segmentation and classification tasks. With a single GPU, Caffe can process more than 60 million images in a day! Here is a simple example of using a pre-trained Caffe model to correctly identify an image as the digit, “5”.</p>
-
 <h3 id="strengths-2">Strengths:</h3>
-
 <ul>
 <li>Has great ready-to-use models for image recognition</li>
 <li>It is the fastest CNN implementation framework</li>
 <li>Models and optimizations are configured rather than coded</li>
 </ul>
-
 <h3 id="weaknesses-1">Weaknesses:</h3>
-
 <ul>
 <li>Not suitable for RNNs</li>
 <li>Poor documentation</li>
 <li>Creating new layers requires defining full forward, backward and gradient updates</li>
 <li>The best thing about Caffe is that models and optimizations are not ‘coded’, but rather ‘configured’ – this reduces a lot of headaches for developers.</li>
 </ul>
-
 <p>So, if you have a large set of images that you need to classify or run some regression algorithms on, you can quickly apply a DL Network without having to write even a line of code.</p>
-
 <p>You can also train over multiple GPUs, but this has some limitations: for example, you can’t do model/data parallelism.</p>
-
 <p>Another upside of Caffe is that it has a pretty good developer community – there’s a whole ‘Model Zoo’ available where you can find a number of CNN implementations and models, like AlexNet, GoogleNet, NIN, etc. This is something that other frameworks lack.</p>
-
 <p>Although the framework is great for CNNs and image processing, it’s not suitable for Recurrent Neural Networks (RNNs) and applications involving text, sound, and time series data. Moreover, even though there are a lot of layers ready to be implemented, the creation of new layers can be tedious, as one would need to define full forward, backward and gradient updates for each new layer.</p>
-
 <p>Finally, the framework offers a medium-level abstraction – it’s high-level enough to allow you to do quick experiments and flexible enough to allow you to fine-tune some of the aspects. This detail may be a positive for mid-level developers, but it feels somewhat limiting for hardcore developers.</p>
-
-<p><img src="https://miro.medium.com/max/1200/1*KKADWARPMxHb-WMxCgW_xA.png" alt="" /></p>
-
+<p><img src="https://miro.medium.com/max/1200/1*KKADWARPMxHb-WMxCgW_xA.png" alt=""></p>
 <h2 id="2-pytorch">2. Pytorch</h2>
-
 <p><code>Ideal for: Both academic use and production</code></p>
-
 <p>Pytorch was developed using Python, C++ and CUDA backend. Created by the Facebook Artificial Intelligence Research team (FAIR), Pytorch is fairly new but is already competing neck-to-neck with Tensorflow, and many predict it will soon become a go-to alternative to many other frameworks.</p>
-
 <h3 id="strengths-3">Strengths:</h3>
-
 <ul>
 <li>Coding is easy, so it has a flatter learning curve</li>
 <li>Supports dynamic graphs so you can adjust on-the-go.</li>
 <li>Supports GPU acceleration</li>
 </ul>
-
 <h3 id="weaknesses-2">Weaknesses:</h3>
-
 <ul>
 <li>Quite new, so it has a smaller community and fewer resources available online. <a href="https://towardsdatascience.com/handwritten-digit-mnist-pytorch-977b5338e627">Here&rsquo;s a good read</a>.</li>
 <li>Pytorch is being lauded particularly by beginners, mostly due to its easy-to-write code – but the framework is basically a blend of both high and low-level APIs. In actuality, it’s suitable for both academic uses as well as hard-core deep learning.</li>
 </ul>
-
 <p>It features a number of pre-trained models. When coding in Pytorch, you don’t need to categorize numbers into ‘int’, ‘short’, or ‘double’ data types, like other coding languages. This makes the performance of operations and functions on this framework more intuitive compared to other options. You can see example code for PyTorch here.</p>
-
 <p>The highlight of this framework, though, is that it offers developers the ability to use dynamic graphs. Tensorflow, Theano, and their derivatives allow you to create only static graphs, so you have to define the whole graph for the model before you can run it. However, in Pytorch, you can define or adjust your graph during runtime, so it’s more flexible and allows you to use variable length inputs, especially in your RNNs.</p>
-
 <p>The framework also provides strong support for GPU acceleration, so you get both efficiency and speed.</p>
-
 <p>The main drawback to Pytorch, though, is that the framework is still growing and you may encounter some bugs. Moreover, owing to its younger age, the resources to supplement its official documentation are still quite scant. But looking at overall trends, this will not be a problem for too long, as more and more developers are converting to Pytorch and the community is growing slowly but steadily.</p>
-
-<p><img src="https://camo.githubusercontent.com/37a83e8eca1db15cf70475cc6bdd4880b1f7b04d/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67" alt="" /></p>
-
+<p><img src="https://camo.githubusercontent.com/37a83e8eca1db15cf70475cc6bdd4880b1f7b04d/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67" alt=""></p>
 <h2 id="1-tensorflow">1. Tensorflow</h2>
-
 <p><code>Ideal for: Intermediate-level developers and for developing production models that need to quickly process vast data sets</code></p>
-
 <p>Tensorflow is currently hailed as the best ML framework out there. Within a very short time, it has become a favorite for many developers and is witnessing an ever-growing community and extraordinary development momentum.</p>
-
 <p>The framework was developed by the Google Brain team and supports all platforms, from Linux to Android. It is a high-level framework that allows you to run low-level code with supporting libraries. Ultimately, it allows you to monitor the progress of the training process, while tracking a lot of metrics and not having to bother about most of the other details.</p>
-
 <h3 id="strengths-4">Strengths:</h3>
-
 <ul>
 <li>Flexibility</li>
 <li>Contains several ready-to-use ML models and ready-to-run application packages</li>
@@ -277,38 +203,27 @@ if (!doNotTrack) {
 <li>Large online community</li>
 <li>Tensorflow Lite is 🧡</li>
 </ul>
-
 <h3 id="weaknesses-3">Weaknesses:</h3>
-
 <ul>
 <li>Supports only NVIDIA GPUs</li>
 <li>A slightly steep learning curve</li>
 <li>Tensorflow’s architecture and UX are different from other frameworks in that the nodes in a Tensorflow graph represent mathematical operations, while the edges of the graph represent multidimensional arrays (tensors). These tensors flow between the nodes, giving you a lot of flexibility when it comes to creating new nodes, unlike the Caffe architecture, for example.</li>
 </ul>
-
 <p>The system also has a host of models to choose from: the framework is pre-loaded with packages that let you perform voice recognition and machine translation, and models that let you run regressions, classifications, neural networks and an assortment of other algorithms.</p>
-
 <p>Tensorflow can be used for quite a few applications within machine learning. Check out a basic “Hello, World” program here and a more traditional matrix example here.</p>
-
 <p>But the feature that really takes the cake is Tensorflow’s computing capabilities. To date, Tensorflow is the strongest contender in the distributed processing arena. It provides remarkable scalability and lets you deploy your computations to multiple CPUs, GPUs, other servers, mobile devices, and the Google Cloud Machine Learning Engine. You can do this without having to rewrite any code – that’s truly powerful.</p>
-
 <p>The main downside, though, is that at the moment, it only supports NVIDIA GPUs. Also, when it comes to RNN support, it is ultimately weaker than some other frameworks and the learning curve can be a little steeper than Sci-kit and Pytorch.</p>
-
 <p>Overall, with a strong Google backing and a huge online community, Tensorflow is here for the long haul.</p>
-
 <h1 id="conclusion">Conclusion</h1>
-
 <p>To sum up, while Tensorflow has gained enormous popularity owing to its flexibility and distributed processing capabilities, Pytorch is also slowly gaining momentum owing to its flatter learning curve and ability to process dynamic graphs. Both of these frameworks are multi-purpose and can be applied to many types of projects. Other frameworks like Caffe, Theano, and Sci-Kit Learn are more specialized and aimed toward specific tasks. Pick a framework that meets your level of expertise and application domain and try out your first project!</p>
-
-<hr />
-
+<hr>
 <blockquote>
 <p>This article has been originally adopted from <a href="https://kite.com/blog/python/python-machine-learning-libraries/">Kite</a>. Kite is a plugin for your IDE that uses machine learning to give you useful code completions for Python. <a href="https://kite.com/">Download for FREE today</a>.</p>
 </blockquote>
 
               <hr>
               <div class="related-posts">
-                <h5>Related Posts</h5>
+                <h5>Similar Posts</h5>
                 
                   <div class="row">
                     <div class="col-sm-4 col-md-4 col-lg-4">
@@ -381,9 +296,11 @@ if (!doNotTrack) {
     <footer>
   <div id="footer">
     <div class="container">
-    	<p class="text-muted">&copy; 2018-2019 Amitrajit Bose. All Rights Reserved</p>
+      <p class="text-muted">
+        &copy; 2018-2020 Amitrajit Bose. All Rights Reserved
+      </p>
       
-
+      
     </div>
   </div>
 </footer>

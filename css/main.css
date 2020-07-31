@@ -1,7 +1,7 @@
 /* Main page with stikky-footer */
 :root{
-  --main-primary-color: #0053FF;
-  --main-secondary-color: #FF4400;
+  --main-primary-color: #990000; /*#0053FF; Blue*/
+  --main-secondary-color: #1B6AA5; /*#FF4400; Orangish Red*/
   /*267723 #27A822 #26AECE*/
 }
 html, body {
@@ -35,7 +35,7 @@ html, body {
   border-color: #ffffff;
 }
 .navbar-default .navbar-brand {
-  color: #6b6b6b;
+  color:#6b6b6b; 
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: #6b6b6b;
