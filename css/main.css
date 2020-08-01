@@ -254,3 +254,33 @@ div.footer{
 }*/
 
 /* First green color: #27A822*/
+
+.projectThumbnail {
+  margin-left:2%;
+ float:left; 
+ /* height:120px; */
+ /* width:140px;	 */
+ } 
+ 
+.projectRow {
+  display: flex;
+  justify-content: left;
+  width:100%;
+  height:auto;
+  padding:1%;
+}
+
+@media screen and (max-width: 768px) {
+  .projectThumbnail {
+    margin-left: 2%;
+    margin-left: 20px;
+  }
+  .projectRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width:100%;
+    height:auto;
+    padding:1%;
+  }
+}
