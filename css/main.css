@@ -229,9 +229,9 @@ html, body {
   padding-bottom: 15px;
 }
 .blogpost{
-  text-align: left;
-  line-height: 30px;
-  font-size: 18px;
+  text-align: justify;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 /* Footer  */
