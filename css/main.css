@@ -163,6 +163,7 @@ html, body {
 }
 .avatar {
   padding-top: 5%;
+  /* float: left; */
 }
 .blog-post{
   padding-top: 15px;
