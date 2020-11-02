@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Amitrajit Bose" />
+    <meta name="description" content="Amitrajit&#39;s Blog">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://amitrajitbose.github.io//img/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    <title>Common Accidental Sources of Data Leaks</title>
+    <meta name="generator" content="Hugo 0.74.3" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-124320658-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header-dark">
+      <a class="navbar-brand" href="https://amitrajitbose.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="https://www.stackoverflow.com/story/amitrajitbose">EXPERIENCE</a></li>
+        
+        <li><a href="https://form.typeform.com/to/j9h64CVd">CONTACT ME</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://amitrajitbose.github.io/blog/common-accidental-sources-of-data-leaks/">Common Accidental Sources of Data Leaks</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          November 2, 2020
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">technology</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p><img src="https://nightfall.ai/wp-content/uploads/2020/07/person-using-macbook-374720-scaled.jpg" alt=""></p>
+<p>In cybersecurity and infosec, it’s common to assume that criminals are behind all data breaches and major security events. Bad actors are easy to blame for information leaks or account takeovers, because they’re the ones taking advantage of vulnerabilities in systems to worm their way in and cause massive damage. But how do they gain access in the first place? Most of the time, well-meaning everyday people are the real source of data insecurity.</p>
+<p>A study of data from 2016 and 2017 indicated that 92% of security data incidents and 84% of confirmed data breaches were unintentional or inadvertent. Accidental data loss continues to plague IT teams, especially as more organizations are rapidly moving to the cloud. While it’s important to prioritize action against outside threats, make sure to include a strategy to minimize the damage from accidental breaches as well.</p>
+<p>This list of five common sources of accidental data leaks will help you identify the problems that could be lurking in your systems, apps, and platforms. Use these examples to prepare tighter security controls and keep internal problems from becoming major issues across your entire organization.</p>
+<h2 id="1-exposing-secrets-in-code-repositories-like-github">1: Exposing secrets in code repositories like GitHub</h2>
+<p>In January 2020, a security researcher found Canadian telecom company Rogers Communications had exposed passwords, private keys, and source code in two public accounts on GitHub. As the investigation into the Rogers breach went on, the researcher found five more public folders on GitHub containing Rogers customer data, including personally identifiable information (PII) like phone numbers.<br>
+This kind of thing happens all the time, like in the case of German automaker Daimler leaking Mercedes-Benz’s source code for smart car components through an unsecured GitLab server in May and Scotiabank exposing source code and private login keys to backend systems in GitHub in September 2019.<br>
+Businesses looking for a secrets detection solution for GitHub should consider Nightfall Radar for GitHub. It’s a fast and easy way to prevent data loss in the platform and avoid problems like exposing sensitive data in code repos, with automated scanning and customizable alerts and reporting to help you take control of your company’s data.</p>
+<h2 id="2-leaking-data-from-misconfigured-buckets-in-aws-s3">2: Leaking data from misconfigured buckets in AWS S3</h2>
+<p>Like GitHub, AWS S3 can be a source of accidental data insecurity. All it takes is one improperly configured bucket in the cloud server to expose huge amounts of data. AWS S3 is different from GitHub in one big way here: GitHub repos allow users to set sharing permissions right away, with “public” set as the default choice. In today’s usage, AWS buckets are private by default. This means user error is behind most major AWS data leaks, when data is exposed in these public buckets.<br>
+Outpost 24 cloud security director Sergio Lourerio, spoke to Computer Weekly in a January 2020 interview on the rising danger of data leakage through public AWS S3 buckets. He pointed to the nature of us all working in the early days of cloud infrastructure security allowing for the prevalence of opportunistic attacks on publicly accessible AWS S3 data buckets.</p>
+<blockquote>
+<p>“You’d be amazed to see the data you can find there just by scanning low-hanging data in cloud infrastructures,” Lourerio said. “And it only takes a couple of API calls to do it. With a lot of data being migrated to the cloud for use cases like data mining, and lack of knowledge of security best practices on [Microsoft] Azure and AWS, it is very simple to get something wrong.”</p>
+</blockquote>
+<p>Earlier this year, UK-based document printing production company Doxzoo had a major cloud security breach thanks to a server misconfiguration that exposed an AWS S3 bucket with over 270,000 records and 34 gigabytes of data. The data included print jobs for several high-profile clients such as the U.S. and UK military branches and Fortune 500 companies — leaving PII like passport scans and PCI data at risk for anyone to see or steal.<br>
+Even worse, the exposure wasn’t reported to Doxzoo until four days after the misconfiguration was found via a routine scanning project. Massive amounts of business-critical data was up for grabs to anyone who had the URL to the public AWS S3 bucket.<br>
+User error among developers and infosec professionals can lead to some of the most egregious security events. The cloud isn’t the only source to blame, however. Sometimes negligence can be an IT team’s worst enemy.</p>
+<h2 id="3-compromising-millions-of-records-through-expired-security-certificates">3: Compromising millions of records through expired security certificates</h2>
+<p>The 2017 Equifax breach is one of the worst data leaks in history, with over 143 million records exposed containing PII like names, addresses, dates of birth, Social Security numbers, and driver license numbers. These records were stolen by hackers who exposed a vulnerability in Apache Struts, a common open source web server. The unpatched server allowed the attackers to gain access to Equifax’s systems for over two months.<br>
+By exposing the one entry point from an expired security certificate, hackers created the perfect environment to keep coming back to the data rich Equifax servers — sending more than 9,000 queries on the databases and downloading data on 265 separate occasions.
+This breach mirrors some similarities of leaks in GitHub and AWS S3, primarily in how Equifax’s response was very slow and inadequate to calm their customers’ fear and worry of having their data exposed. Equifax missed the data exfiltration events happening right under its nose for 19 months, and it took another two months for them to update the expired certificate. Only after the update happened did the company notice suspicious web traffic.<br>
+Equifax’s former chief information officer David Webb admitted in a U.S. congressional investigation report,</p>
+<blockquote>
+<p>“Had the company taken action to address its observable security issues prior to this cyberattack, the data breach could have been prevented.”</p>
+</blockquote>
+<p>A strong security posture starts by securing your systems wherever you find a vulnerable point. The next step is to critical examine the entities you do business with — third and fourth party exposure can be just as devastating in a data breach.</p>
+<h2 id="4-leaving-the-door-open-with-unsecured-third-and-fourth-party-vendors">4: Leaving the door open with unsecured third and fourth party vendors</h2>
+<p>An organization that is doing everything right by controlling data exfiltration in the cloud with DLP, securing AWS S3 buckets, and maintaining current certificates on their website can still be at risk of data exposure through unsecured third and fourth party vendors.<br>
+Damage control is hard enough when it’s just one source to deal with. But when you have to investigate and remediate a data breach that results from vendors and other business partners, there’s a lot more work to do.
+Companies can accidentally leak as much as 92% of their data via URLs, cookies, or improperly configured storage. This exposure on its own is a major security problem. When you add third and fourth party vendors and services on these websites, that means the leaked information could be exposed to any of those services embedded into a compromised page.<br>
+Third and forth party vendors provide essential services for the parent company, like expedited checkout portals with payment processors. Third party vendors often rely on fourth party services just as the parent company relies on outside help to maximize operations — on average, 40% of services on a website is powered by fourth parties.<br>
+This is what happened in one of Target’s worst data breach events. In December 2013, a data breach leaked over 70 million Target customer records. Scammers found their way in by stealing credentials of a Target HVAC contractor. It sounds like a long and winding road to get from a third party vendor who never touches the main company’s network, but all it takes to pull off a heist like this is for one small exposure.<br>
+With all these avenues covered — code repos, website containers, other vendors — you may think your security job is done. You must take on email security for your employees, as this is a much easier fix to a problem that can do severe damage.</p>
+<h2 id="5-giving-up-on-security-standards-with-lax-email-policies">5: Giving up on security standards with lax email policies</h2>
+<p>Email scams are the oldest trick in the cybercrime book. As some of us are still falling for phishing scams from Nigerian princes, many more well-meaning people fail at email security every day, just from inadequate email security practices.<br>
+Poor password hygiene for email accounts (using “password” for your login credentials), not using multi-factor authentication when signing into accounts, or a lack of employee training and clear policies are contributing factors to the rapid rise in business email compromise (BEC).<br>
+According to the FBI, losses from BEC attacks total over $26 billion. More scammers are using COVID-19 to make their way into inboxes and systems. Even with tougher regulations in place like the California Consumer Privacy Act (CCPA), which carries heavy penalties for noncompliance, BEC is still a major threat to any organization. Email users should take the extra security steps to ensure their accounts are safe.<br>
+It’s hard to fight back against thieves, cybercriminals, and scammers — especially when your own people can do most of the damage right there inside the organization. Work with your teams to determine where security vulnerabilities exist within your networks, platforms, and systems, and train everyone on best practices for securing their own logins and access points. It could also help to back up all your hard work with a DLP solution like Nightfall that catches data you may have missed even before it can leave your network.</p>
+<hr>
+<p>“This <a href="https://nightfall.ai/resources/accidental-data-leaks/">article</a> is originally posted on <a href="https://nightfall.ai/">Nightfall.ai</a>”</p>
+<p>Nightfall is the industry’s first cloud-native DLP platform that discovers, classifies, and protects data via machine learning. Nightfall is designed to work with popular SaaS applications like Slack and GitHub as well as IaaS platforms like AWS. You can schedule a demo with us below to see the Nightfall platform in action.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Similar Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'amitrajitbose';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+  
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">
+        &copy; 2018-2020 Amitrajit Bose. All Rights Reserved
+      </p>
+      
+      
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://amitrajitbose.github.io/js/docs.min.js"></script>
+<script src="https://amitrajitbose.github.io/js/main.js"></script>
+
+<script src="https://amitrajitbose.github.io/js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
