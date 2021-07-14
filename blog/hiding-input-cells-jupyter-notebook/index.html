@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
     <title>Hiding Input Cells On Jupyter Notebook</title>
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.47.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
     
@@ -64,7 +64,7 @@ if (!doNotTrack) {
         
         <li><a href="https://www.stackoverflow.com/story/amitrajitbose">EXPERIENCE</a></li>
         
-        <li><a href="https://form.typeform.com/to/j9h64CVd">CONTACT ME</a></li>
+        <li><a href="https://form.typeform.com/to/j9h64CVd">CONNECT</a></li>
         
         
       </ul>
@@ -94,12 +94,18 @@ if (!doNotTrack) {
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <h3 id="why-needed-">Why Needed ?</h3>
+              
+
+<h3 id="why-needed">Why Needed ?</h3>
+
 <p>Sometimes we don&rsquo;t want to show the code during presentation of the notebook, or sometimes the code can look really clumsy.
 Taking care of the code while tearing your hairs to find a better solution to a problem simultaneously is quite a mammoth task.
 Most tutorials on the web would suggest you to install <strong>nbextensions</strong>, an open-source notebook extension package for Jupyter notebooks. Definitely that is clean and easy, but I just don&rsquo;t like installing things and junking up my workstation, rather I&rsquo;d write a custom code to solve the problem. Here, I have a solution which probably many of you may find useful to hide the input cells of a notebook <strong>without installing anything extra at all</strong>.</p>
-<h3 id="how-to-use-">How To Use ?</h3>
+
+<h3 id="how-to-use">How To Use ?</h3>
+
 <p>On the first cell of your notebook just paste this code snippet and Run the cell (<em>Ctrl-Enter</em> or <em>Shift-Enter</em>).</p>
+
 <pre><code># This is a cell to hide code snippets from displaying
 # This must be at first cell!
 
@@ -128,9 +134,14 @@ function code_toggle() {
 $( document ).ready(code_toggle);
 &lt;/script&gt;
 &lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input style=&quot;opacity:0&quot; type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;''')
-</code></pre><p>Once you run the cell, you will probably see it disappear. So here went the code, but now how to use it!</p>
+</code></pre>
+
+<p>Once you run the cell, you will probably see it disappear. So here went the code, but now how to use it!</p>
+
 <p>To hide a cell, just write <strong>hide_me</strong> as the first line of the cell followed by whatever you need to write after it. That&rsquo;s it.</p>
+
 <p>I have this tested for Jupyter notebook server version 5.3.1 on Python 3.6.1. This should work for you all well!</p>
+
 <p>Godspeed!</p>
 
               <hr>
@@ -209,7 +220,7 @@ $( document ).ready(code_toggle);
   <div id="footer">
     <div class="container">
       <p class="text-muted">
-        &copy; 2018-2020 Amitrajit Bose. All Rights Reserved
+        &copy; 2018-2021 Amitrajit Bose. All Rights Reserved
       </p>
       
       

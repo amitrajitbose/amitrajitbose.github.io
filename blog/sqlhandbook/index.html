@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
     <title>SQL Handbook</title>
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.47.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://amitrajitbose.github.io/css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
     
@@ -64,7 +64,7 @@ if (!doNotTrack) {
         
         <li><a href="https://www.stackoverflow.com/story/amitrajitbose">EXPERIENCE</a></li>
         
-        <li><a href="https://form.typeform.com/to/j9h64CVd">CONTACT ME</a></li>
+        <li><a href="https://form.typeform.com/to/j9h64CVd">CONNECT</a></li>
         
         
       </ul>
@@ -90,9 +90,14 @@ if (!doNotTrack) {
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <h1 id="sql-handbook">SQL Handbook</h1>
-<h4 id="author--amitrajit-bose">Author : Amitrajit Bose</h4>
-<h2 id="data-typeshttpsdocsoraclecomcdb19306_01server102b14200sql_elements001htm-in-oracle-sql"><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/sql_elements001.htm">Data Types</a> in Oracle SQL</h2>
+              
+
+<h1 id="sql-handbook">SQL Handbook</h1>
+
+<h4 id="author-amitrajit-bose">Author : Amitrajit Bose</h4>
+
+<h2 id="data-types-https-docs-oracle-com-cd-b19306-01-server-102-b14200-sql-elements001-htm-in-oracle-sql"><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14200/sql_elements001.htm">Data Types</a> in Oracle SQL</h2>
+
 <ul>
 <li>VARCHAR2(size)</li>
 <li>NVARCHAR2(size)</li>
@@ -104,7 +109,9 @@ if (!doNotTrack) {
 <li>CHAR [(size)]
 <em>N.B: This tutorial uses SQLite, although most features are same as Oracle SQL and other variants</em></li>
 </ul>
+
 <h2 id="sql-manipulation">SQL Manipulation</h2>
+
 <ul>
 <li>Create Table <code>CREATE TABLE celebs(id INTEGER, name TEXT, age INTEGER );</code></li>
 <li>Insert Rows <code>INSERT INTO celebs (id, name, age) VALUES (1, 'Justin Bieber', 21);</code></li>
@@ -112,29 +119,33 @@ if (!doNotTrack) {
 <li>Update Value <code>UPDATE celebs SET age = 22 WHERE id = 1;</code></li>
 <li>Alter Table <code>ALTER TABLE celebs ADD COLUMN twitter_handle TEXT;</code></li>
 <li>Delete Rows <code>DELETE FROM celebs WHERE twitter_handle IS NULL;</code></li>
-<li>Add Constraint <code>CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &quot;Grammy&quot; );</code><!-- raw HTML omitted --></li>
+<li>Add Constraint <code>CREATE TABLE awards (id INTEGER PRIMARY KEY, recipient TEXT NOT NULL, award_name TEXT DEFAULT &quot;Grammy&quot; );</code><br></li>
 </ul>
+
 <pre><code>CREATE TABLE celebs ( 
   id INTEGER PRIMARY KEY,
   name TEXT UNIQUE,
   date_of_birth TEXT NOT NULL,
   date_of_death TEXT DEFAULT 'Not Applicable'
   );
-</code></pre><h3 id="more-on-constraints">More on constraints:</h3>
+</code></pre>
+
+<h3 id="more-on-constraints">More on constraints:</h3>
+
 <p>Constraints that add information about how a column can be used are invoked after specifying the data type for a column. They can be used to tell the database to reject inserted data that does not adhere to a certain restriction.</p>
+
 <p>1.<strong>PRIMARY KEY</strong> columns can be used to uniquely identify the row. Attempts to insert a row with an identical value to a row already in the table will result in a constraint violation which will not allow you to insert the new row.</p>
-<ol start="2">
-<li>
-<p><strong>UNIQUE</strong> columns have a different value for every row. This is similar to PRIMARY KEY except a table can have many different UNIQUE columns.</p>
-</li>
-<li>
-<p><strong>NOT NULL</strong> columns must have a value. Attempts to insert a row without a value for a NOT NULL column will result in a constraint violation and the new row will not be inserted.</p>
-</li>
-<li>
-<p><strong>DEFAULT</strong> columns take an additional argument that will be the assumed value for an inserted row if the new row does not specify a value for that column.</p>
-</li>
+
+<ol>
+<li><p><strong>UNIQUE</strong> columns have a different value for every row. This is similar to PRIMARY KEY except a table can have many different UNIQUE columns.</p></li>
+
+<li><p><strong>NOT NULL</strong> columns must have a value. Attempts to insert a row without a value for a NOT NULL column will result in a constraint violation and the new row will not be inserted.</p></li>
+
+<li><p><strong>DEFAULT</strong> columns take an additional argument that will be the assumed value for an inserted row if the new row does not specify a value for that column.</p></li>
 </ol>
+
 <h2 id="sql-queries">SQL Queries</h2>
+
 <ul>
 <li>Select Columns <code>SELECT NAME, GENRE, YEAR FROM MOVIES;</code></li>
 <li>Rename Columns/Aliasing <code>SELECT imdb_rating AS 'IMDb' FROM MOVIES;</code></li>
@@ -152,8 +163,9 @@ if (!doNotTrack) {
 <li>ORDER BY (ascending ASC) <code>SELECT name FROM movies ORDER BY imdb_rating;</code></li>
 <li>ORDER BY (descending DESC) <code>SELECT name FROM movies ORDER BY imdb_rating DESC;</code></li>
 <li>Limit the prompt from showing all rows <code>SELECT * FROM movies ORDER BY imdb_rating DESC LIMIT 3;</code></li>
-<li>Conditional Logic If-Then <!-- raw HTML omitted --></li>
+<li>Conditional Logic If-Then <br></li>
 </ul>
+
 <pre><code>SELECT name,
  CASE
   WHEN imdb_rating &gt; 8 THEN 'Fantastic'
@@ -161,23 +173,31 @@ if (!doNotTrack) {
   ELSE 'Avoid at All Costs'
  END AS 'Reviews
 FROM movies;
-</code></pre><h2 id="aggregate-functions">Aggregate Functions</h2>
+</code></pre>
+
+<h2 id="aggregate-functions">Aggregate Functions</h2>
+
 <p>Aggregate functions combine multiple rows together to form a single value of more meaningful information.</p>
+
 <ul>
 <li>Count total rows in a column <code>SELECT COUNT(*) FROM table_name;</code></li>
 <li>Sum of values in a column <code>SELECT SUM(downloads) FROM fake_apps;</code></li>
 <li>Maximum value in a column <code>SELECT MAX(downloads) FROM fake_apps;</code></li>
 <li>Minimum value in a column <code>SELECT MIN(downloads) FROM fake_apps;</code></li>
 <li>Average of a column <code>SELECT AVG(downloads) FROM fake_apps;</code></li>
-<li>Round the values a column to the number of decimal places specified <!-- raw HTML omitted --></li>
+<li>Round the values a column to the number of decimal places specified <br></li>
 </ul>
+
 <pre><code>SELECT ROUND(price, 0) FROM fake_apps;
 SELECT name, ROUND(AVG(price), 2) FROM fake_apps;
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li>Grouping similar values <code>SELECT price, COUNT(*) FROM fake_apps GROUP BY price;</code></li>
 <li>Grouping values <code>SELECT ROUND(imdb_rating),COUNT(name) FROM movies GROUP BY 1 ORDER BY 1;</code> Here 1 refers to the first parameter in the SELECT, i.e ROUND(imdb_rating).</li>
-<li>Having is used to filter Group By results <!-- raw HTML omitted --></li>
+<li>Having is used to filter Group By results <br></li>
 </ul>
+
 <pre><code>SELECT price,
    ROUND(AVG(downloads)),
    COUNT(*)
@@ -185,110 +205,134 @@ FROM fake_apps
 GROUP BY price 
 HAVING COUNT(*) &gt; 10;
 
-</code></pre><p>GROUP BY is a clause used with aggregate functions to combine data from one or more columns.<!-- raw HTML omitted -->
-HAVING limit the results of a query based on an aggregate property.<!-- raw HTML omitted --></p>
+</code></pre>
+
+<p>GROUP BY is a clause used with aggregate functions to combine data from one or more columns.<br>
+HAVING limit the results of a query based on an aggregate property.<br></p>
+
 <h2 id="multiple-tables">Multiple Tables</h2>
+
 <p>In order to efficiently store data, we often spread related information across multiple tables.</p>
+
 <ul>
-<li><strong>Joining Multiple Tables</strong></li>
-</ul>
+<li><p><strong>Joining Multiple Tables</strong></p>
+
 <pre><code>SELECT orders.order_id,customers.customer_name
 FROM orders
 JOIN customers
-  ON orders.customer_id = customers.customer_id;
-</code></pre><p>Let&rsquo;s break down this command:</p>
-<ul>
-<li>
-<p>The first line selects certain columns, we can specify which ones we want or use * (asterisk).</p>
-</li>
-<li>
-<p>The second line specifies the first table that we want to look in, orders</p>
-</li>
-<li>
-<p>The third line uses JOIN to say that we want to combine information from orders with customers.</p>
-</li>
-<li>
-<p>The fourth line tells us how to combine the two tables. We want to match orders table&rsquo;s customer_id column with customers table&rsquo;s customer_id column.</p>
-</li>
-<li>
-<p>Because column names are often repeated across multiple tables, we use the syntax table_name.column_name to be sure that our requests for columns are unambiguous.</p>
-</li>
-<li>
-<p>In our example, we use this syntax in the ON statement, but we will also use it in the SELECT or any other statement where we refer to column names.</p>
-</li>
-<li>
-<p><strong>Inner Join</strong></p>
-</li>
+ON orders.customer_id = customers.customer_id;
+</code></pre>
+
+<p>Let&rsquo;s break down this command:</p></li>
+
+<li><p>The first line selects certain columns, we can specify which ones we want or use * (asterisk).</p></li>
+
+<li><p>The second line specifies the first table that we want to look in, orders</p></li>
+
+<li><p>The third line uses JOIN to say that we want to combine information from orders with customers.</p></li>
+
+<li><p>The fourth line tells us how to combine the two tables. We want to match orders table&rsquo;s customer_id column with customers table&rsquo;s customer_id column.</p></li>
+
+<li><p>Because column names are often repeated across multiple tables, we use the syntax table_name.column_name to be sure that our requests for columns are unambiguous.</p></li>
+
+<li><p>In our example, we use this syntax in the ON statement, but we will also use it in the SELECT or any other statement where we refer to column names.</p></li>
+
+<li><p><strong>Inner Join</strong></p></li>
 </ul>
+
 <p>When we perform a simple JOIN (often called an inner join) our result only includes rows that match our ON condition.
 Consider the following animation, which illustrates an inner join of two tables on table1.c2 = table2.c2:</p>
-<p><img src="https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/inner-join.gif" alt="inner join gif">
+
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/inner-join.gif" alt="inner join gif" />
 <a href="https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/inner-join.gif">Link To GIF</a></p>
+
 <p>We have seen the query structure above.</p>
+
 <ul>
 <li><strong>Left Join</strong></li>
 </ul>
+
 <p>What if we want to combine two tables and keep some of the un-matched rows?
 SQL lets us do this through a command called LEFT JOIN. A left join will keep all rows from the first table,
 regardless of whether there is a matching row in the second table.
 Consider the following animation:</p>
-<p><img src="https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/left-join.gif" alt="left join gif">
+
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/left-join.gif" alt="left join gif" />
 <a href="https://s3.amazonaws.com/codecademy-content/courses/learn-sql/multiple-tables/left-join.gif">Link To GIF</a></p>
+
 <p>The query structure looks like :</p>
+
 <pre><code>SELECT *
 FROM table1
 LEFT JOIN table2
   ON table1.c2 = table2.c2;
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li><strong>Primary &amp; Foreign Keys</strong></li>
 </ul>
-<p>Primary keys have a few requirements:</p>
-<ul>
-<li>None of the values can be NULL.</li>
-<li>Each value must be unique (i.e., you can&rsquo;t have two customers with the same <em>customer_id</em> in the <em>customers</em> table).</li>
-<li>A table can not have more than one primary key column.</li>
-</ul>
+
+<p>Primary keys have a few requirements:
+- None of the values can be NULL.
+- Each value must be unique (i.e., you can&rsquo;t have two customers with the same <em>customer_id</em> in the <em>customers</em> table).
+- A table can not have more than one primary key column.</p>
+
 <p>When the primary key for one table appears in a different table, it is called a <strong>foreign key</strong>.</p>
+
 <p>Why is this important?
 The most common types of joins will be joining a foreign key from one table with the primary key from another table.
 For instance, when we join orders and customers, we join on customer_id, which is a foreign key in orders and the primary key in customers.</p>
+
 <ul>
 <li><strong>Cross Join</strong></li>
 </ul>
+
 <p>Cross Join is like cartesian product. Sometimes, we just want to combine all rows of one table with all rows of another table.
 For instance, if we had a table of shirts and a table of pants, we might want to know all the possible combinations to create different outfits.
 Cross joins do not require an <strong>ON</strong> clause, because they are not really joining on any condition.</p>
+
 <p>The query structure looks like:</p>
+
 <pre><code>SELECT shirts.shirt_color,
    pants.pants_color
 FROM shirts
 CROSS JOIN pants;
-</code></pre><p>This is an example query, where we had a <em>newspaper</em> table and a <em>months</em> table. This query returns the total number of subscriptions for each month.</p>
+</code></pre>
+
+<p>This is an example query, where we had a <em>newspaper</em> table and a <em>months</em> table. This query returns the total number of subscriptions for each month.</p>
+
 <pre><code>SELECT month, COUNT(*)
 FROM newspaper
 CROSS JOIN months
 WHERE start_month&lt;=month
 AND month&lt;=end_month
 GROUP BY month;
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li><strong>Union</strong></li>
 </ul>
+
 <p>Basically helps us to stack one table on another. Join was merging side by side. This will stack one on another.
-But wait, SQL has strict rules for appending data:</p>
-<ul>
-<li>Tables must have the same number of columns.</li>
-<li>The columns must have the same data types in the same order as the first table.</li>
-</ul>
+But wait, SQL has strict rules for appending data:
+- Tables must have the same number of columns.
+- The columns must have the same data types in the same order as the first table.</p>
+
 <p>The query structure looks like:</p>
+
 <pre><code>SELECT *
 FROM table1
 UNION
 SELECT *
 FROM table2;
-</code></pre><ul>
+</code></pre>
+
+<ul>
 <li><strong>With</strong></li>
 </ul>
+
 <p>Allows us to define one or more temporary tables that can be used in the final query.</p>
+
 <pre><code>WITH previous_results AS (
    SELECT ...
    ...
@@ -299,8 +343,12 @@ SELECT *
 FROM previous_results
 JOIN customers
   ON _____ = _____;
-</code></pre><p>The first query gets an alias <strong>previous_results</strong>, we can now use that table howsoever we want.</p>
+</code></pre>
+
+<p>The first query gets an alias <strong>previous_results</strong>, we can now use that table howsoever we want.</p>
+
 <p>Here, is a complex example below.</p>
+
 <pre><code>WITH previous_query AS (
 SELECT customer_id,
    COUNT(subscription_id) AS 'subscriptions'
@@ -311,7 +359,10 @@ SELECT customers.customer_name, previous_query.subscriptions
 FROM previous_query
 JOIN customers
 ON previous_query.customer_id=customers.customer_id;
-</code></pre><p>Essentially what we are doing above is:</p>
+</code></pre>
+
+<p>Essentially what we are doing above is:</p>
+
 <ul>
 <li>Generate a temporary table and name it as <strong>previous_query</strong></li>
 <li>The temporary table has a customer ID and total subscriptions made by the customer, thus two columns</li>
@@ -320,9 +371,13 @@ ON previous_query.customer_id=customers.customer_id;
 <li>Extract the names where the customer IDs match</li>
 <li>Thus print those corresponding names.</li>
 </ul>
+
 <p>Pheww..! :p</p>
+
 <p>Hope this helps. :)</p>
-<hr>
+
+<hr />
+
 <p><em>Source : <a href="https://www.codecademy.com/learn/learn-sql">Codecademy</a></em></p>
 
               <hr>
@@ -388,7 +443,7 @@ ON previous_query.customer_id=customers.customer_id;
   <div id="footer">
     <div class="container">
       <p class="text-muted">
-        &copy; 2018-2020 Amitrajit Bose. All Rights Reserved
+        &copy; 2018-2021 Amitrajit Bose. All Rights Reserved
       </p>
       
       
