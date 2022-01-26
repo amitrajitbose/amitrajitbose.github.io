@@ -136,6 +136,7 @@ html, body {
   padding-top: -10px;
   text-align: left;
 }
+
 .social-links {
   display: block;
   margin: 0 auto;
@@ -144,7 +145,6 @@ html, body {
   width: 100%;
   text-align: center;
   animation: fade 1s ease 1s both;
-  border-bottom: 10px;
 }
 .social-links li {
   display: inline-block;
