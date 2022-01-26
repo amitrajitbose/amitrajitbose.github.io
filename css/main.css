@@ -1,6 +1,6 @@
 /* Main page with stikky-footer */
 :root{
-  --main-primary-color: #990000; /*#0053FF; Blue*/
+  --main-primary-color: #0053FF; /*#990000; crimson*/
   --main-secondary-color: #1B6AA5; /*#FF4400; Orangish Red*/
   /*267723 #27A822 #26AECE*/
 }
@@ -144,6 +144,7 @@ html, body {
   width: 100%;
   text-align: center;
   animation: fade 1s ease 1s both;
+  border-bottom: 10px;
 }
 .social-links li {
   display: inline-block;
